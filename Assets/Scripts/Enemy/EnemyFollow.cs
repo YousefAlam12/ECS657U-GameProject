@@ -9,13 +9,12 @@ public class EnemyFollow : MonoBehaviour
     public Transform player;
     public float aggroRange = 10.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    // Checks to see if player is wthin range of the enemy's attacking area
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);

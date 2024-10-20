@@ -9,18 +9,17 @@ public class DamagePlayer : MonoBehaviour
     private float nextDamageTime = 0f;
     public PlayerController player;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = FindAnyObjectByType<PlayerController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
+    // On collision the direction of the knockback is calculated and set whilst reducing health of player
     void OnCollisionEnter(Collision other)
     {
         if (other.collider.CompareTag("Player") && Time.time >= nextDamageTime)
@@ -31,7 +30,7 @@ public class DamagePlayer : MonoBehaviour
             HealthManager playerHealth = FindAnyObjectByType<HealthManager>();
             if (playerHealth != null)
             {
-                playerHealth.damagePlayer(damageAmount, hitDirection);
+                playerHealth.damagePlayer(damageAmount, hitDirection*2);
                 // nextDamageTime = Time.time + damageCooldown; // Set the next time the enemy can deal damage
             }
         }

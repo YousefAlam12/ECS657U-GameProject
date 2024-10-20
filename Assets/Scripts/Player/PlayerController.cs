@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     // movement variables
     private Vector3 moveDirection;
     public Vector2 moveInput;
+    public Vector2 lookInput;
 
     public CharacterController controller;
 
@@ -92,6 +93,12 @@ public class PlayerController : MonoBehaviour
                 // Debug.Log("released: " + value);
                 isSprinting = false;
             }
+    }
+
+    // for the camera to move with player
+    public void OnLook(InputValue value)
+    {
+        lookInput = value.Get<Vector2>();
     }
 
 
