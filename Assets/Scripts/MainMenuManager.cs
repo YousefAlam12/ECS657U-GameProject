@@ -10,4 +10,15 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level1");
     }
+
+    public void OpenControls()
+    {
+        SceneManager.LoadScene("ControlsScreen");
+    }
+
+    public void CloseControls()
+    {
+        SceneManager.LoadScene("MainMenuScreen");
+    }
 }
+
