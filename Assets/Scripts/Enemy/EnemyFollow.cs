@@ -22,7 +22,7 @@ public class EnemyFollow : MonoBehaviour
         projectileTime = timer;
     }
 
-    // Update is called once per frame
+    // Checks to see if player is wthin range of the enemy's attacking area
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
