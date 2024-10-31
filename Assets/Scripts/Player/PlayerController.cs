@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool isWallJump = false;
     private float wallStore;
 
+    // knockback variables 
     public float knockBackForce = 5f;
     public float knockBackTime = 0.5f;
     private float knockBackCounter;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 lookInput;
 
     public CharacterController controller;
+    public OxygenBar o2Bar;
 
 
  
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
         // using CharacterController
         controller = GetComponent<CharacterController>();
         moveSpeed = walkSpeed;
+        o2Bar = FindAnyObjectByType<OxygenBar>();
     }
 
     // Moving function which reads the value of the direction moving in on button press
@@ -155,6 +158,7 @@ public class PlayerController : MonoBehaviour
             if(controller.isGrounded) {
                 if(isSprinting) {
                     moveSpeed = sprintSpeed;
+                    o2Bar.oxygen -= 5f * Time.deltaTime;
                 }
                 else {
                     moveSpeed = walkSpeed;
