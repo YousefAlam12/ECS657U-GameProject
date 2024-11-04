@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
     public OxygenBar o2Bar;
 
+    // pickup variables
+    private bool isDropping = false;
+    public GameObject pickingUp;
+    private new CameraController camera;
+
 
  
 
@@ -48,6 +53,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         moveSpeed = walkSpeed;
         o2Bar = FindAnyObjectByType<OxygenBar>();
+        camera = FindAnyObjectByType<CameraController>();
     }
 
     // Moving function which reads the value of the direction moving in on button press
@@ -76,9 +82,18 @@ public class PlayerController : MonoBehaviour
             }
         }
         // checks if gravity is acting to prevent heavily delaying walljump
-        if(isWallJump && moveDirection.y > 0) {
+        // if(isWallJump && moveDirection.y > 0) {
+        //     moveDirection.y = 0;
+        //     if(value.isPressed && moveInput.x == wallStore)
+        //     {
+        //         Knockback(new Vector3((moveDirection.x/2)*-1, 2f, (moveDirection.z/2)*-1));
+        //         isWallJump = false;
+        //     }
+        // }
+
+        if(isWallJump) {
             moveDirection.y = 0;
-            if(value.isPressed && moveInput.x == wallStore)
+            if(value.isPressed)
             {
                 Knockback(new Vector3((moveDirection.x/2)*-1, 2f, (moveDirection.z/2)*-1));
                 isWallJump = false;
@@ -89,11 +104,9 @@ public class PlayerController : MonoBehaviour
     // Sprint function sets the sprinting state to true when button is pressed and false when released
     void OnSprint(InputValue value) {
             if(value.isPressed) {
-                // Debug.Log("pressed: " + value);
                 isSprinting = true;
             }
             else {
-                // Debug.Log("released: " + value);
                 isSprinting = false;
             }
     }
@@ -102,6 +115,16 @@ public class PlayerController : MonoBehaviour
     public void OnLook(InputValue value)
     {
         lookInput = value.Get<Vector2>();
+    }
+
+    // player grabs pickup objects and is also able to drop them
+    public void OnGrab(InputValue value) {
+        if(value.isPressed && pickingUp != null && !isDropping) {
+            Pickup(pickingUp);
+        }
+        else {
+            Drop(pickingUp);
+        }
     }
 
 
@@ -158,7 +181,7 @@ public class PlayerController : MonoBehaviour
             if(controller.isGrounded) {
                 if(isSprinting) {
                     moveSpeed = sprintSpeed;
-                    o2Bar.oxygen -= 5f * Time.deltaTime;
+                    // o2Bar.oxygen -= 5f * Time.deltaTime;
                 }
                 else {
                     moveSpeed = walkSpeed;
@@ -178,22 +201,67 @@ public class PlayerController : MonoBehaviour
     }
 
     // Allows wall jumps to be done when touching an object with the WallJump tag
-    void OnControllerColliderHit(ControllerColliderHit other) {
+    // void OnControllerColliderHit(ControllerColliderHit other) {
+    //     if(other.gameObject.tag == "WallJump")
+    //     {
+    //         // Debug.Log("hit something");
+    //         isWallJump = true;
+    //         wallStore = moveInput.x;
+    //     }
+    //     else {
+    //         isWallJump = false;
+    //         wallStore = 0;
+    //     }   
+    // }
+
+    // checks collisions for different types of environment objects
+    void OnCollisionEnter(Collision other) {
+
+        // checks collision with walls that are able to be walljumped
         if(other.gameObject.tag == "WallJump")
         {
-            // Debug.Log("hit something");
             isWallJump = true;
             wallStore = moveInput.x;
         }
-        else {
+
+        // checks collisions with objects that are able to be picked up
+        if(other.gameObject.tag == "Pickup") {
+            pickingUp = other.gameObject;
+        }
+    }
+
+    // when exiting collisions with environment objects
+    void OnCollisionExit(Collision other) {
+
+        if(other.gameObject.tag == "WallJump")
+        {
             isWallJump = false;
             wallStore = 0;
+        }
+
+        if(other.gameObject.tag == "Pickup") {
+            pickingUp = null;
         }
     }
 
     public void Knockback(Vector3 direction) {
         knockBackCounter = knockBackTime;
         moveDirection = direction * knockBackForce;
+    }
+
+    // sets the pickup obj to follow the players movement
+    void Pickup(GameObject obj) {
+        obj.transform.parent = transform;
+        obj.transform.position = new Vector3(camera.pivot.position.x, 4f, camera.pivot.position.z+0.4f);
+        isDropping = true;
+    }
+
+    // stops the pickup obj from following the player
+    void Drop(GameObject obj) {
+        if(pickingUp != null) {
+            obj.transform.parent = null;
+            isDropping = false;
+        }
     }
 
     void Update()
