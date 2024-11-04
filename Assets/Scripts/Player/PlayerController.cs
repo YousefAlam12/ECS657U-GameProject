@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
     public OxygenBar o2Bar;
 
     // pickup variables
-    private bool isDropping = false;
+    private bool canDrop = false;
+    public GameObject grabable;
     public GameObject pickingUp;
     private new CameraController camera;
 
@@ -119,7 +120,8 @@ public class PlayerController : MonoBehaviour
 
     // player grabs pickup objects and is also able to drop them
     public void OnGrab(InputValue value) {
-        if(value.isPressed && pickingUp != null && !isDropping) {
+        if(value.isPressed && grabable != null && !canDrop) {
+            pickingUp = grabable;
             Pickup(pickingUp);
         }
         else {
@@ -155,6 +157,12 @@ public class PlayerController : MonoBehaviour
             moveDirection = moveDirection.normalized * moveSpeed;
             moveDirection.y = yStore;
 
+            // prevents grabbed object from going beneath the player
+            if(grabable == pickingUp && pickingUp != null && pickingUp.transform.position.y < transform.position.y+1)
+            {
+                pickingUp.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
+            }
+
             // // preventing infinite jumps
             // if (controller.isGrounded)
             // {
@@ -178,7 +186,8 @@ public class PlayerController : MonoBehaviour
             //     }
             // }
 
-            if(controller.isGrounded) {
+            if(controller.isGrounded)
+            {
                 if(isSprinting) {
                     moveSpeed = sprintSpeed;
                     // o2Bar.oxygen -= 5f * Time.deltaTime;
@@ -226,7 +235,7 @@ public class PlayerController : MonoBehaviour
 
         // checks collisions with objects that are able to be picked up
         if(other.gameObject.tag == "Pickup") {
-            pickingUp = other.gameObject;
+            grabable = other.gameObject;
         }
     }
 
@@ -240,7 +249,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if(other.gameObject.tag == "Pickup") {
-            pickingUp = null;
+            grabable = null;
         }
     }
 
@@ -251,16 +260,18 @@ public class PlayerController : MonoBehaviour
 
     // sets the pickup obj to follow the players movement
     void Pickup(GameObject obj) {
+        // obj.transform.position = new Vector3(camera.pivot.position.x, 5f, camera.pivot.position.z+0.4f);
+        obj.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
         obj.transform.parent = transform;
-        obj.transform.position = new Vector3(camera.pivot.position.x, 4f, camera.pivot.position.z+0.4f);
-        isDropping = true;
+        canDrop = true;
     }
 
     // stops the pickup obj from following the player
     void Drop(GameObject obj) {
-        if(pickingUp != null) {
+        if(pickingUp != null && grabable == pickingUp) {
             obj.transform.parent = null;
-            isDropping = false;
+            canDrop = false;
+            pickingUp = null;
         }
     }
 
