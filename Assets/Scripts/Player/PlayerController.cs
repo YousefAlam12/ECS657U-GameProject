@@ -82,15 +82,6 @@ public class PlayerController : MonoBehaviour
                 moveDirection.y = 0f;
             }
         }
-        // checks if gravity is acting to prevent heavily delaying walljump
-        // if(isWallJump && moveDirection.y > 0) {
-        //     moveDirection.y = 0;
-        //     if(value.isPressed && moveInput.x == wallStore)
-        //     {
-        //         Knockback(new Vector3((moveDirection.x/2)*-1, 2f, (moveDirection.z/2)*-1));
-        //         isWallJump = false;
-        //     }
-        // }
 
         if(isWallJump) {
             moveDirection.y = 0;
@@ -129,30 +120,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnFire(InputValue value) {
+        if(value.isPressed) {
+
+            // prioritise throwing an object that is being held
+            if(pickingUp != null && grabable == pickingUp)
+            {                
+                pickingUp.transform.parent = null;
+                canDrop = false;
+
+                // resets rb constraints in order to add force to object
+                pickingUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                pickingUp.GetComponent<Rigidbody>().AddForce(transform.forward * 50000f, ForceMode.Impulse);
+                pickingUp = null;
+                // o2Bar.oxygen -= 3f;
+            }
+        }
+    }
+
 
 
     void MovePlayer()
     {       
-        // using rigid body
-        // rb.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
-
-        // if(Input.GetButtonDown("Jump")) {
-        //     rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-        // }
-
-
-        // using CharacterController for 3D movement 
-
-        // moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
-
-
         if(knockBackCounter <= 0 ) 
         {
             // stores the y position of the player before calculating the movement of player with mouse in order allow jumps
             float yStore = moveDirection.y;
 
             // using the mouse to move the player in chosen directions
-            // moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
             moveDirection = (transform.forward * moveInput.y) + (transform.right * moveInput.x);
             moveDirection = moveDirection.normalized * moveSpeed;
             moveDirection.y = yStore;
@@ -162,29 +157,6 @@ public class PlayerController : MonoBehaviour
             {
                 pickingUp.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
             }
-
-            // // preventing infinite jumps
-            // if (controller.isGrounded)
-            // {
-            //     //moveDirection.y = 0f;
-
-            //     // if(Input.GetButtonDown("Jump")) {
-            //     //if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            //     //{
-            //     //    moveDirection.y = jumpForce;
-            //     //}
-
-            //     // sprint button
-            //     // if(Input.GetButton("Fire3")) {
-            //     if (Keyboard.current.leftShiftKey.isPressed)
-            //     {
-            //         moveSpeed = sprintSpeed;
-            //     }
-            //     else
-            //     {
-            //         moveSpeed = walkSpeed;
-            //     }
-            // }
 
             if(controller.isGrounded)
             {
@@ -209,20 +181,6 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
     }
 
-    // Allows wall jumps to be done when touching an object with the WallJump tag
-    // void OnControllerColliderHit(ControllerColliderHit other) {
-    //     if(other.gameObject.tag == "WallJump")
-    //     {
-    //         // Debug.Log("hit something");
-    //         isWallJump = true;
-    //         wallStore = moveInput.x;
-    //     }
-    //     else {
-    //         isWallJump = false;
-    //         wallStore = 0;
-    //     }   
-    // }
-
     // checks collisions for different types of environment objects
     void OnCollisionEnter(Collision other) {
 
@@ -236,6 +194,11 @@ public class PlayerController : MonoBehaviour
         // checks collisions with objects that are able to be picked up
         if(other.gameObject.tag == "Pickup") {
             grabable = other.gameObject;
+
+            // prevents you from being unable to do actions while touching another obj
+            if (pickingUp != null) {
+                grabable = pickingUp;
+            }
         }
     }
 
@@ -262,6 +225,7 @@ public class PlayerController : MonoBehaviour
     void Pickup(GameObject obj) {
         // obj.transform.position = new Vector3(camera.pivot.position.x, 5f, camera.pivot.position.z+0.4f);
         obj.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
+        obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         obj.transform.parent = transform;
         canDrop = true;
     }
