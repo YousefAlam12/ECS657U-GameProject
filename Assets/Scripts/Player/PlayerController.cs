@@ -132,6 +132,10 @@ public class PlayerController : MonoBehaviour
                 // resets rb constraints in order to add force to object
                 pickingUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
                 pickingUp.GetComponent<Rigidbody>().AddForce(transform.forward * 50000f, ForceMode.Impulse);
+
+                // Set the thrown state to true
+                pickingUp.GetComponent<PickupProjectile>().SetThrownState(true);
+                
                 pickingUp = null;
                 // o2Bar.oxygen -= 3f;
             }
