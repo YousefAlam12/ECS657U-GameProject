@@ -24,7 +24,7 @@ public class EnemyShoot : MonoBehaviour
         // Only shoot if the player is within shooting range and in sight
         if (distanceToPlayer <= shootingRange && IsPlayerInSight())
         {
-            Debug.Log("Player is in sight and within range. Shooting...");
+            //Debug.Log("Player is in sight and within range. Shooting...");
             ShootAtPlayer();
         }
     }
@@ -40,12 +40,12 @@ public class EnemyShoot : MonoBehaviour
             // Check if the raycast hit the player
             if (hit.transform == player)
             {
-                Debug.Log("Player is in line of sight");
+                //Debug.Log("Player is in line of sight");
                 return true; // Player is in sight
             }
         }
 
-        Debug.Log("Player is not in line of sight");
+        //Debug.Log("Player is not in line of sight");
         return false; // Player is not in sight
     }
 
