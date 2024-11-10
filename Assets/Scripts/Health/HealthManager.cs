@@ -22,8 +22,11 @@ public class HealthManager : MonoBehaviour
     public void damagePlayer(int damage, Vector3 direction) {
         currentHealth -= damage;
         
-        thePlayer.Knockback(direction);
-        
+        if (direction != Vector3.zero)
+        {
+            thePlayer.Knockback(direction);
+        }
+            
         if(currentHealth <= 0) {
             currentHealth = 0;
         }
