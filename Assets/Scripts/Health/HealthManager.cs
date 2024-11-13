@@ -10,12 +10,14 @@ public class HealthManager : MonoBehaviour
     public int currentHealth;
 
     public PlayerController thePlayer;
+    public PlayerInventory inventory;
 
     // Setting up health and linking it to the healthbar
     void Start() {
         currentHealth = maxHealth;
         healthBar.setMaxHealth(maxHealth);
         thePlayer = FindAnyObjectByType<PlayerController>();
+        inventory = FindAnyObjectByType<PlayerInventory>();
     }
 
     // Damages the player reflects on the healthbar
@@ -31,6 +33,8 @@ public class HealthManager : MonoBehaviour
             currentHealth = 0;
         }
         healthBar.setHealth(currentHealth);
+        inventory.powerup = null;
+        inventory.isPoweredup = false;
     }
 
     void Update() {
