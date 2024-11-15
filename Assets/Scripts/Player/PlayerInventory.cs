@@ -50,10 +50,9 @@ public class PlayerInventory : MonoBehaviour
         if (powerup.GetComponent<Dash>() != null) {
             dash();
         }
-
-        // if (powerup.GetComponent<Shoot>() != null) {
-                // add shooting logic in the shoot script 
-                // if you need to add vars to player controller thats ok but dont do it unecessarily (also make sure you comment them if you do)
-        // }
+        else if (powerup.GetComponent<Shoot>() != null)
+        {
+            powerup.GetComponent<Shoot>().Shooting();
+        }
     }
 }
