@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
                 
                 canDrop = false;
                 pickingUp = null;
-                // o2Bar.oxygen -= 3f;
+                o2Bar.oxygen -= 3f;
             }
         }
     }
@@ -194,17 +194,36 @@ public class PlayerController : MonoBehaviour
             dashDirection = Vector3.Lerp(dashDirection, Vector3.zero, dashDecay * Time.deltaTime);
 
 
-            // prevents grabbed object from going beneath the player
-            if(grabable == pickingUp && pickingUp != null && pickingUp.transform.position.y < transform.position.y+1)
+            // // prevents grabbed object from going beneath the player
+            // if(grabable == pickingUp && pickingUp != null && pickingUp.transform.position.y < transform.position.y+1)
+            // {
+            //     pickingUp.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
+            // }
+
+            // prevents picked up object from moving around
+            if (pickingUp != null)
             {
-                pickingUp.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
+                float objectHeight = pickingUp.GetComponent<Collider>().bounds.size.y;
+                float minY = transform.position.y + 1.2f;
+                float maxY = transform.position.y + 0.2f + objectHeight;
+
+                // float clampedY = Mathf.Min(pickingUp.transform.position.y, transform.position.y + objectHeight + 0.2f);
+                // float clampedY = Mathf.Min(pickingUp.transform.position.y, transform.position.y + 1.2f);
+                float clampedY = Mathf.Clamp(pickingUp.transform.position.y, minY, maxY);
+
+                pickingUp.transform.position = new Vector3(pickingUp.transform.position.x, clampedY, pickingUp.transform.position.z);
             }
 
             if(controller.isGrounded)
             {
                 if(isSprinting) {
                     moveSpeed = sprintSpeed;
-                    // o2Bar.oxygen -= 5f * Time.deltaTime;
+                    
+                    // only lose O2 when actually moving
+                    if (moveInput.x != 0 || moveInput.y != 0)
+                    {
+                        o2Bar.oxygen -= 5f * Time.deltaTime;
+                    }
                 }
                 else {
                     moveSpeed = walkSpeed;

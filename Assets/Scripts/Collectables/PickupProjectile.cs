@@ -7,6 +7,7 @@ public class PickupProjectile : MonoBehaviour
     private bool isThrown = false;
     private float throwTimeout = 5f; // Time reset the state
     private float throwTimer;
+    public float threshold = -20;
 
     public void SetThrownState(bool state)
     {
@@ -27,6 +28,12 @@ public class PickupProjectile : MonoBehaviour
             {
                 ResetThrownState();
             }
+        }
+
+        // if object falls below threshold it will be destroyed
+        if (transform.position.y < threshold)
+        {
+            Destroy(gameObject);
         }
     }
 

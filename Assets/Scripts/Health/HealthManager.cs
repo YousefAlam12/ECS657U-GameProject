@@ -18,6 +18,7 @@ public class HealthManager : MonoBehaviour
         healthBar.setMaxHealth(maxHealth);
         thePlayer = FindAnyObjectByType<PlayerController>();
         inventory = FindAnyObjectByType<PlayerInventory>();
+        healthBar = FindAnyObjectByType<HealthBar>();
     }
 
     // Damages the player reflects on the healthbar
