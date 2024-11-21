@@ -31,7 +31,7 @@ public class Shoot : MonoBehaviour
         // Check if enough time has passed for the next shot
         if (Time.time >= nextShootTime)
         {
-            Debug.Log("Shooting"); // Log to confirm shooting occurs
+            // Debug.Log("Shooting"); // Log to confirm shooting occurs
 
             GameObject projectileObj = Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation) as GameObject;
             Rigidbody projectileRig = projectileObj.GetComponent<Rigidbody>();
