@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileDamage : MonoBehaviour
+public class ProjectileEnemyDamage : MonoBehaviour
 {
     public int damageAmount = 1;
     private bool hasDealtDamage = false;
