@@ -4,28 +4,50 @@ using UnityEngine;
 
 public class OxygenPickup : MonoBehaviour
 {
-    public float oxygenAmount = 10f; // Amount of oxygen to add when picked up
-    private OxygenBar oxygenBar; // Reference to the OxygenBar script
+    public float oxygenAmount = 10f; 
+    private OxygenBar oxygenBar; 
+    public float respawnTime = 5f;
+    private MeshRenderer meshRenderer;
+    private Collider collider;
 
     void Start()
     {
         // Find the OxygenBar in the scene
         oxygenBar = FindAnyObjectByType<OxygenBar>();
+
+        // Cache references to components
+        meshRenderer = GetComponent<MeshRenderer>();
+        collider = GetComponent<Collider>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // Check if the object that entered the trigger is the player
         if (other.CompareTag("Player")) // Ensure your player has the "Player" tag
         {
+            Debug.Log("Oxygen pickup collected by player.");
+
             // Increase the oxygen level
             oxygenBar.oxygen += oxygenAmount;
 
             // Clamp the oxygen value to ensure it doesn't exceed the maximum
             oxygenBar.oxygen = Mathf.Clamp(oxygenBar.oxygen, 0, oxygenBar.maxOxygen);
 
-            // Optionally, destroy the pickup object after use
-            Destroy(gameObject);
+            // Start the respawn coroutine
+            StartCoroutine(Respawn());
         }
+    }
+
+    private IEnumerator Respawn()
+    {
+        // Hide the object by disabling its mesh and collider
+        meshRenderer.enabled = false;
+        collider.enabled = false;
+
+        // Wait for the specified respawn time
+        yield return new WaitForSeconds(respawnTime);
+
+        // Show the object again
+        meshRenderer.enabled = true;
+        collider.enabled = true;
     }
 }
