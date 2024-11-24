@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     public PlayerInventory playerInventory;
     public Button restartButton;
     public Button mainMenuButton;
-    public TextMeshProUGUI gameOverText; 
+    public TextMeshProUGUI gameOverText;
+    public Vector3 respawnPoint;
+    public GameObject player;
 
     void Start() 
     {
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour
 
         healthManager = FindAnyObjectByType<HealthManager>();
         mainCamera = Camera.main.gameObject;
+
+        respawnPoint = player.transform.position;
     }
 
     void Update() 
@@ -35,13 +39,19 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
 
+        if (playerInventory.NumberOfTreasure == 1 )
+        {
+            RespawnPlayer();
+        }
+
+
         // Transisitons to lvl2 once the treasure is obtained from lvl1
-        if (playerInventory.NumberOfTreasure == 1 && SceneManager.GetActiveScene().name != "Level2") {
+        if (playerInventory.NumberOfTreasure == 2 && SceneManager.GetActiveScene().name != "Level2") {
             SceneManager.LoadScene("Level2");
         }
 
         // Prototype finish screen 
-        if (playerInventory.NumberOfTreasure == 2)
+        if (playerInventory.NumberOfTreasure == 3)
         {
             SceneManager.LoadScene("MainMenuScreen");
         }
@@ -74,5 +84,14 @@ public class GameManager : MonoBehaviour
     {
         // Restart game from level 1
         SceneManager.LoadScene("MainMenuScreen");
+    }
+
+    void RespawnPlayer()
+    {
+        if (player != null && respawnPoint != null)
+        {
+            player.transform.position = respawnPoint; // Move player to respawn point
+            healthManager.currentHealth = healthManager.maxHealth; // Restore health if needed
+        }
     }
 }
