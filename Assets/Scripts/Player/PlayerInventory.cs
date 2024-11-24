@@ -11,9 +11,4 @@ public class PlayerInventory : MonoBehaviour
     {
         NumberOfTreasure++;
     }
-
-    public void CoinCollected()
-    {
-        NumberOfCoins++;
-    }
 }
