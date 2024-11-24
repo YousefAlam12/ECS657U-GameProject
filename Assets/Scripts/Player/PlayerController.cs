@@ -42,6 +42,15 @@ public class PlayerController : MonoBehaviour
     public GameObject pickingUp;
     private new CameraController camera;
 
+    
+    // variables for dash powerup
+    public Vector3 dashDirection;
+    public float dashDecay = 5f;
+    // public float dashPower = 20f;
+    // public float dashCooldown = 0.5f;
+    // private float nextDashTime = 0f;
+    private PlayerInventory inventory;
+
 
  
 
@@ -55,6 +64,7 @@ public class PlayerController : MonoBehaviour
         moveSpeed = walkSpeed;
         o2Bar = FindAnyObjectByType<OxygenBar>();
         camera = FindAnyObjectByType<CameraController>();
+        inventory = GetComponent<PlayerInventory>();
     }
 
     // Moving function which reads the value of the direction moving in on button press
@@ -120,14 +130,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnFire(InputValue value) {
+    // player throws grabbed obj 
+    public void OnThrow(InputValue value) {
         if(value.isPressed) {
 
             // prioritise throwing an object that is being held
             if(pickingUp != null && grabable == pickingUp)
             {                
                 pickingUp.transform.parent = null;
-                canDrop = false;
 
                 // resets rb constraints in order to add force to object
                 pickingUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
@@ -136,9 +146,30 @@ public class PlayerController : MonoBehaviour
                 // Set the thrown state to true
                 pickingUp.GetComponent<PickupProjectile>().SetThrownState(true);
                 
+                canDrop = false;
                 pickingUp = null;
-                // o2Bar.oxygen -= 3f;
+                o2Bar.oxygen -= 3f;
             }
+        }
+    }
+
+    // public void OnFire(InputValue value) {
+    //     if (value.isPressed && Time.time >= nextDashTime) {  // Check cooldown
+    //         if (moveInput != Vector2.zero) {
+    //             // Calculate dash direction based on current movement direction
+    //             dashDirection = (transform.forward * moveInput.y + transform.right * moveInput.x).normalized * dashPower;
+    //             nextDashTime = Time.time + dashCooldown;  // Update next dash time
+    //         }
+    //     }
+    // }
+
+    // activates the players powerup ability
+    public void OnFire(InputValue value)
+    {
+        if (value.isPressed && inventory.isPoweredup)
+        {
+            // inventory.ability();
+            inventory.usePowerUp();
         }
     }
 
@@ -156,17 +187,43 @@ public class PlayerController : MonoBehaviour
             moveDirection = moveDirection.normalized * moveSpeed;
             moveDirection.y = yStore;
 
-            // prevents grabbed object from going beneath the player
-            if(grabable == pickingUp && pickingUp != null && pickingUp.transform.position.y < transform.position.y+1)
+            // Apply dash if active
+            moveDirection += dashDirection;
+
+            // Decay the dash direction over time
+            dashDirection = Vector3.Lerp(dashDirection, Vector3.zero, dashDecay * Time.deltaTime);
+
+
+            // // prevents grabbed object from going beneath the player
+            // if(grabable == pickingUp && pickingUp != null && pickingUp.transform.position.y < transform.position.y+1)
+            // {
+            //     pickingUp.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
+            // }
+
+            // prevents picked up object from moving around
+            if (pickingUp != null)
             {
-                pickingUp.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
+                float objectHeight = pickingUp.GetComponent<Collider>().bounds.size.y;
+                float minY = transform.position.y + 1.2f;
+                float maxY = transform.position.y + 0.2f + objectHeight;
+
+                // float clampedY = Mathf.Min(pickingUp.transform.position.y, transform.position.y + objectHeight + 0.2f);
+                // float clampedY = Mathf.Min(pickingUp.transform.position.y, transform.position.y + 1.2f);
+                float clampedY = Mathf.Clamp(pickingUp.transform.position.y, minY, maxY);
+
+                pickingUp.transform.position = new Vector3(pickingUp.transform.position.x, clampedY, pickingUp.transform.position.z);
             }
 
             if(controller.isGrounded)
             {
                 if(isSprinting) {
                     moveSpeed = sprintSpeed;
-                    // o2Bar.oxygen -= 5f * Time.deltaTime;
+                    
+                    // only lose O2 when actually moving
+                    if (moveInput.x != 0 || moveInput.y != 0)
+                    {
+                        o2Bar.oxygen -= 5f * Time.deltaTime;
+                    }
                 }
                 else {
                     moveSpeed = walkSpeed;
