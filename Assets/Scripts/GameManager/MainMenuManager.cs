@@ -20,5 +20,16 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenuScreen");
     }
+
+    void Update()
+    {
+        ////////////////////////////////////////////
+        // ONLY FOR PLAYTEST
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            SceneManager.LoadScene("Yousef");
+        }
+        ////////////////////////////////////////////
+    }
 }
 

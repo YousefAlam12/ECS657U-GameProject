@@ -35,18 +35,22 @@ public class PlatformCollision : MonoBehaviour
 
     // When player enters the platform make them move with it
     void PlayerEnters() {
-        obj.gameObject.transform.parent = platform;
+        // obj.gameObject.transform.parent = platform;
+        obj.gameObject.transform.SetParent(platform, true);
+
         playerEnters = false;
     }
 
     // When player leaves platform make its transform seperate from the platform
     void PlayerExits() {
-        obj.gameObject.transform.parent = null;
+        // obj.gameObject.transform.parent = null;
+        obj.gameObject.transform.SetParent(null);
         playerExits = false;
     }
 
 
-    void LateUpdate() {
+    // void LateUpdate() {
+    void FixedUpdate() {
         if (playerEnters) {
             PlayerEnters();
         }

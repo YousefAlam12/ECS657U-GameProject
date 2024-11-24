@@ -17,11 +17,15 @@ public class GameManager : MonoBehaviour
     public Vector3 respawnPoint;
     public GameObject player;
 
+    // flag for respawn
+    private bool hasRespawned = false;
+
     void Start() 
     {
         gameOverPanel = GameObject.Find("GameOverPanel");
         healthManager = FindAnyObjectByType<HealthManager>();
         playerInventory = FindAnyObjectByType<PlayerInventory>();
+        player = GameObject.Find("Player");
 
         // Hide Game Over panel initially
         gameOverPanel.SetActive(false);
@@ -39,9 +43,11 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
 
-        if (playerInventory.NumberOfTreasure == 1 )
+        if (playerInventory.NumberOfTreasure == 1 && !hasRespawned)
         {
             RespawnPlayer();
+            hasRespawned = true;
+            
         }
 
 
@@ -91,7 +97,8 @@ public class GameManager : MonoBehaviour
         if (player != null && respawnPoint != null)
         {
             player.transform.position = respawnPoint; // Move player to respawn point
-            healthManager.currentHealth = healthManager.maxHealth; // Restore health if needed
+            // healthManager.currentHealth = healthManager.maxHealth; // Restore health if needed
+            healthManager.healthBar.setHealth(healthManager.maxHealth); // Restore health if needed
         }
     }
 }
