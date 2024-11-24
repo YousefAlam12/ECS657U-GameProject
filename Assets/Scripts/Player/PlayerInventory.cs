@@ -5,9 +5,15 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public int NumberOfTreasure;
+    public int NumberOfCoins;
 
     public void TreasureCollected()
     {
         NumberOfTreasure++;
+    }
+
+    public void CoinCollected()
+    {
+        NumberOfCoins++;
     }
 }
