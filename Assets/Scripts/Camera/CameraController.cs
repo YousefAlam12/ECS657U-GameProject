@@ -10,7 +10,6 @@ public class CameraController : MonoBehaviour
     public Vector3 offset;
     public float mouseSensitivity = 0.04f;
     public Transform pivot;
-
     public float maxViewAngle;
     public float minViewAngle;
 
@@ -28,6 +27,7 @@ public class CameraController : MonoBehaviour
     {
         offset = focalPoint.position - transform.position;
         player = FindAnyObjectByType<PlayerController>();
+        mouseSensitivity = OptionsManager.GetSensitivity();
 
         // pivot used as intermediate object to rotate camera vertically instead of directly the player (prevent player from rotating verticaly)
         pivot.transform.position = focalPoint.transform.position;

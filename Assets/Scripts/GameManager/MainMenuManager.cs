@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static float sensitivity;
+
     public void StartGame()
     {
         SceneManager.LoadScene("Level1");
@@ -14,6 +15,11 @@ public class MainMenuManager : MonoBehaviour
     public void OpenControls()
     {
         SceneManager.LoadScene("ControlsScreen");
+    }
+
+    public void OpenOptions()
+    {
+        SceneManager.LoadScene("OptionsMenu");
     }
 
     public void CloseControls()
