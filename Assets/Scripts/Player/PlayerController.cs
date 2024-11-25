@@ -283,6 +283,12 @@ public class PlayerController : MonoBehaviour
         moveDirection = direction * knockBackForce;
     }
 
+    // Set the vertical movement to the bounce force
+    public void Bounce(float force)
+    {
+        moveDirection.y = force;
+    }
+
     // sets the pickup obj to follow the players movement
     void Pickup(GameObject obj) {
         // obj.transform.position = new Vector3(camera.pivot.position.x, 5f, camera.pivot.position.z+0.4f);
