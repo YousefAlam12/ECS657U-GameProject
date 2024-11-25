@@ -259,6 +259,7 @@ public class PlayerController : MonoBehaviour
             // prevents you from being unable to do actions while touching another obj
             if (pickingUp != null) {
                 grabable = pickingUp;
+                pickingUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
             }
         }
     }
@@ -285,8 +286,8 @@ public class PlayerController : MonoBehaviour
     // sets the pickup obj to follow the players movement
     void Pickup(GameObject obj) {
         // obj.transform.position = new Vector3(camera.pivot.position.x, 5f, camera.pivot.position.z+0.4f);
-        obj.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
-        obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+        obj.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3.2f, camera.pivot.position.z);
+        // obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
         obj.transform.parent = transform;
         canDrop = true;
     }
@@ -294,6 +295,7 @@ public class PlayerController : MonoBehaviour
     // stops the pickup obj from following the player
     void Drop(GameObject obj) {
         if(pickingUp != null && grabable == pickingUp) {
+            obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
             obj.transform.parent = null;
             canDrop = false;
             pickingUp = null;
