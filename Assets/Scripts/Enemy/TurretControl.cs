@@ -7,8 +7,8 @@ public class Turret : MonoBehaviour
     public Transform player;
     public float aggroRange = 10.0f;
     public Transform turretHead;
-    public float alignmentThreshold = 0.1f; // Threshold to avoid jitter
 
+    private float alignmentThreshold = 0.1f; // Threshold to avoid jitter
     private Vector3 lastDirection;
 
     // Start is called before the first frame update
