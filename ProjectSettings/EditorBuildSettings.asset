@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/Yousef.unity
     guid: 698634c73ba03df41a6498fcf34cf894
+  - enabled: 1
+    path: Assets/Scenes/OptionsMenu.unity
+    guid: 508131873e8ae6f4f912a490f39b0af0
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
