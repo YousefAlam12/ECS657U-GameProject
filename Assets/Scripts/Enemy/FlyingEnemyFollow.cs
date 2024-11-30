@@ -9,36 +9,40 @@ public class FlyingEnemyFollow : MonoBehaviour
     public NavMeshAgent flyingEnemy;
     public float hoverHeight = 2.1f;  // Height above the ground to simulate flying
     public float aggroRange = 10.0f;
-    
+
     void Start()
     {
         // Ensure the agent doesn't automatically adjust its Y position
         flyingEnemy.updateUpAxis = false;
+        //flyingEnemy.updatePosition = false; // Disable automatic position updates
     }
-
 
     void Update()
     {
-        // Move towards the player using NavMesh (X and Z axis only)
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer <= aggroRange) // will chase player if it within range
+        if (distanceToPlayer <= aggroRange)
         {
             ChasePlayer();
         }
 
-        // Use a Raycast to determine the current ground height below the enemy
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit))
-        {
-            // Set the Y position to hoverHeight above the ground
-            Vector3 pos = transform.position;
-            pos.y = hit.point.y + hoverHeight;
-            transform.position = pos;
-        }
+        // Adjust the position to maintain hover height
+        AdjustHeight();
     }
 
     void ChasePlayer()
     {
         flyingEnemy.SetDestination(player.position);
+    }
+
+    void AdjustHeight()
+    {
+        // Use a Raycast to find the ground height
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit))
+        {
+            Vector3 targetPosition = flyingEnemy.nextPosition; // Use NavMeshAgent's calculated position
+            targetPosition.y = hit.point.y + hoverHeight; // Adjust Y position for hover height
+            transform.position = targetPosition; // Apply the adjusted position
+        }
     }
 }
