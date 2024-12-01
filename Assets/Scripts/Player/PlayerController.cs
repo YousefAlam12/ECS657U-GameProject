@@ -193,6 +193,8 @@ public class PlayerController : MonoBehaviour
             // Decay the dash direction over time
             dashDirection = Vector3.Lerp(dashDirection, Vector3.zero, dashDecay * Time.deltaTime);
 
+            moveDirection += conveyorForce;
+
 
             // // prevents grabbed object from going beneath the player
             // if(grabable == pickingUp && pickingUp != null && pickingUp.transform.position.y < transform.position.y+1)
@@ -287,6 +289,11 @@ public class PlayerController : MonoBehaviour
     public void Bounce(float force)
     {
         moveDirection.y = force;
+    }
+    private Vector3 conveyorForce = Vector3.zero;
+    public void SetConveyorForce(Vector3 force)
+    {
+        conveyorForce = force;
     }
 
     // sets the pickup obj to follow the players movement
