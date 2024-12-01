@@ -16,9 +16,11 @@ public class MovingPlatform : MonoBehaviour
 
     void Start()
     {
+        string parentName = gameObject.name;
         if (pointA == null || pointB == null)
         {
             Debug.LogError("Point A or Point B is not assigned in the inspector.");
+            Debug.LogError($"Points is not assigned on MovingPlatform '{parentName}'.");
             return;
         }
 
