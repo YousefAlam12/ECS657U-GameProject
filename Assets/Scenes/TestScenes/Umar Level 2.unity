@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0, g: 0.08235294, b: 0.16470589, a: 1}
+  m_FogColor: {r: 0, g: 0.07075471, b: 0.14150941, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
   m_LinearFogStart: 0
@@ -7839,7 +7839,7 @@ MonoBehaviour:
   pickups:
   - {fileID: 1510757144054267494, guid: 9daffdd6da6686c4b8f8a87ba60628d8, type: 3}
   amount: 1
-  spawnArea: {x: 30, y: 15, z: 45}
+  spawnArea: {x: 35, y: 25, z: 45}
   spawnableLayer:
     serializedVersion: 2
     m_Bits: 8
