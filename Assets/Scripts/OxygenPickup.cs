@@ -37,6 +37,7 @@ public class OxygenPickup : MonoBehaviour
         }
     }
 
+    // respawns the pickup after set time
     private IEnumerator Respawn()
     {
         // Hide the object by disabling its mesh and collider

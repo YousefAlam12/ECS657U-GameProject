@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     public static float sensitivity;
+    public static bool easyMode = false;
 
     public void StartGame()
     {
@@ -25,6 +26,23 @@ public class MainMenuManager : MonoBehaviour
     public void CloseControls()
     {
         SceneManager.LoadScene("MainMenuScreen");
+    }
+
+    // sets difficulty to easy when button is clicked
+    public void setEasy()
+    {
+        easyMode = true;
+    }
+
+    // sets difficulty to standard when button is clicked
+    public void setStandard()
+    {
+        easyMode = false;
+    }
+
+    public static bool isEasy()
+    {
+        return easyMode;
     }
 
     void Update()

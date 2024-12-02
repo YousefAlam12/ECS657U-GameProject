@@ -27,6 +27,8 @@ public class CameraController : MonoBehaviour
     {
         offset = focalPoint.position - transform.position;
         player = FindAnyObjectByType<PlayerController>();
+
+        // set the sensitivity to what was set by player
         mouseSensitivity = OptionsManager.GetSensitivity();
 
         // pivot used as intermediate object to rotate camera vertically instead of directly the player (prevent player from rotating verticaly)

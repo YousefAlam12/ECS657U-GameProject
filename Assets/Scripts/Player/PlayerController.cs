@@ -65,6 +65,14 @@ public class PlayerController : MonoBehaviour
         o2Bar = FindAnyObjectByType<OxygenBar>();
         camera = FindAnyObjectByType<CameraController>();
         inventory = GetComponent<PlayerInventory>();
+
+        // change stats to make game easier
+        if (MainMenuManager.isEasy())
+        {
+            Debug.Log("easy mode");
+            jumpForce = 10f;
+            o2Bar.maxOxygen = 300f;
+        }
     }
 
     // Moving function which reads the value of the direction moving in on button press

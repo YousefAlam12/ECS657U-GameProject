@@ -31,7 +31,7 @@ public class DamagePlayer : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.damagePlayer(damageAmount, hitDirection*2);
-                // nextDamageTime = Time.time + damageCooldown; // Set the next time the enemy can deal damage
+                nextDamageTime = Time.time + damageCooldown; // Set the next time the enemy can deal damage
             }
         }
     }

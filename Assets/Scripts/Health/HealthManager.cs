@@ -14,6 +14,11 @@ public class HealthManager : MonoBehaviour
 
     // Setting up health and linking it to the healthbar
     void Start() {
+        if (MainMenuManager.isEasy())
+        {
+            maxHealth = 10;
+        }
+
         currentHealth = maxHealth;
         healthBar.setMaxHealth(maxHealth);
         thePlayer = FindAnyObjectByType<PlayerController>();
@@ -34,6 +39,8 @@ public class HealthManager : MonoBehaviour
             currentHealth = 0;
         }
         healthBar.setHealth(currentHealth);
+
+        // lose powerup on hit
         inventory.powerup = null;
         inventory.isPoweredup = false;
     }

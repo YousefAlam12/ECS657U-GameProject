@@ -1869,6 +1869,9 @@ MonoBehaviour:
   - {fileID: 980301760}
   amount: 3
   spawnArea: {x: 10, y: 5, z: 10}
+  spawnableLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1323742112
 GameObject:
   m_ObjectHideFlags: 0

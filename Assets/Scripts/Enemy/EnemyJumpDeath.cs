@@ -1,9 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyJumpDeath : MonoBehaviour
 {
+    void Start()
+    {
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+
+        // reduce the enemy speed on easy mode
+        if (MainMenuManager.isEasy())
+        {
+            agent.speed = agent.speed - 2;
+        }
+    }
+
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

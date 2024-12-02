@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 0}
 --- !u!114 &3837091339632347523
 MonoBehaviour:

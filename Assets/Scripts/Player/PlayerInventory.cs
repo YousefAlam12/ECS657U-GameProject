@@ -11,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
 
     // variables for the Dash powerup
     public float dashDecay = 5f;
-    public float dashPower = 20f;
+    public float dashPower = 30f;
     public float dashCooldown = 0.5f;
     private float nextDashTime = 0f;
 

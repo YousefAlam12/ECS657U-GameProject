@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &46419122
 MonoBehaviour:
@@ -1450,7 +1450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &287599858
 MonoBehaviour:
@@ -1750,7 +1750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &324808461
 MonoBehaviour:
@@ -2282,7 +2282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &432421511
 MonoBehaviour:
@@ -2610,7 +2610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &439854614
 MonoBehaviour:
@@ -3069,7 +3069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &585208000
 MonoBehaviour:
@@ -3658,7 +3658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &654645411
 MonoBehaviour:
@@ -3881,7 +3881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &656942221
 MonoBehaviour:
@@ -4325,7 +4325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &749392165
 MonoBehaviour:
@@ -4611,7 +4611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &757334046
 MonoBehaviour:
@@ -4940,7 +4940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &799654024
 MonoBehaviour:
@@ -5501,7 +5501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &868190098
 MonoBehaviour:
@@ -5724,7 +5724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &870178699
 MonoBehaviour:
@@ -6328,7 +6328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &924601579
 MonoBehaviour:
@@ -7254,11 +7254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84e9db3af8a4e541884e1f8c0ffe7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfTreasure: 2
+  NumberOfTreasure: 0
   isPoweredup: 0
   powerup: {fileID: 0}
   dashDecay: 5
-  dashPower: 20
+  dashPower: 30
   dashCooldown: 0.5
 --- !u!114 &1082593380
 MonoBehaviour:
@@ -7641,7 +7641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1091273353
 MonoBehaviour:
@@ -7865,7 +7865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1095044735
 MonoBehaviour:
@@ -8088,7 +8088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1106212033
 MonoBehaviour:
@@ -8393,7 +8393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1123790380
 MonoBehaviour:
@@ -9222,7 +9222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1260364061
 MonoBehaviour:
@@ -9445,7 +9445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1261375237
 MonoBehaviour:
@@ -9668,7 +9668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1303674577
 MonoBehaviour:
@@ -9997,7 +9997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1329765078
 MonoBehaviour:
@@ -10295,7 +10295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1338935898
 MonoBehaviour:
@@ -10600,7 +10600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1347943449
 MonoBehaviour:
@@ -11006,7 +11006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1475552204
 MonoBehaviour:
@@ -11387,7 +11387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1524652397
 MonoBehaviour:
@@ -11770,7 +11770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1544571131
 MonoBehaviour:
@@ -12262,7 +12262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1656294737
 MonoBehaviour:
@@ -13236,7 +13236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1842613573
 MonoBehaviour:
@@ -13834,7 +13834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1879762902
 MonoBehaviour:
@@ -14057,7 +14057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1881624940
 MonoBehaviour:
@@ -14281,7 +14281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1884493041
 MonoBehaviour:
@@ -14609,7 +14609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1894266786
 MonoBehaviour:
@@ -15236,7 +15236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &1957318390
 MonoBehaviour:
@@ -15521,7 +15521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 1082593384}
 --- !u!114 &2009377093
 MonoBehaviour:

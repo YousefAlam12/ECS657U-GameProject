@@ -82,6 +82,13 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame() 
     {
+        // respawn on current level when easy mode
+        if(MainMenuManager.isEasy())
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            return;
+        }
+
         // Restart game from level 1
         SceneManager.LoadScene("Level1");
     }
@@ -97,8 +104,12 @@ public class GameManager : MonoBehaviour
         if (player != null && respawnPoint != null)
         {
             player.transform.position = respawnPoint; // Move player to respawn point
-            // healthManager.currentHealth = healthManager.maxHealth; // Restore health if needed
-            healthManager.healthBar.setHealth(healthManager.maxHealth); // Restore health if needed
+
+            // Restore health on respaw when easy
+            if (MainMenuManager.isEasy())
+            {
+                healthManager.healthBar.setHealth(healthManager.maxHealth);
+            }
         }
     }
 }
