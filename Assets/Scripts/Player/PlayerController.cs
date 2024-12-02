@@ -46,9 +46,9 @@ public class PlayerController : MonoBehaviour
     // variables for dash powerup
     public Vector3 dashDirection;
     public float dashDecay = 5f;
-    // public float dashPower = 20f;
-    // public float dashCooldown = 0.5f;
-    // private float nextDashTime = 0f;
+    public float dashPower = 30f;
+    public float dashCooldown = 0.5f;
+    private float nextDashTime = 0f;
     private PlayerInventory inventory;
 
 
@@ -210,9 +210,10 @@ public class PlayerController : MonoBehaviour
             //     pickingUp.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
             // }
 
-            // prevents picked up object from moving around
+            // prevents you from being unable to do actions while touching another obj and stops unwanted movement
             if (pickingUp != null)
             {
+                grabable = pickingUp;
                 float objectHeight = pickingUp.GetComponent<Collider>().bounds.size.y;
                 float minY = transform.position.y + 1.2f;
                 float maxY = transform.position.y + 0.2f + objectHeight;
@@ -266,9 +267,9 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "Pickup") {
             grabable = other.gameObject;
 
-            // prevents you from being unable to do actions while touching another obj
+            // prevents picked up obj from moving
             if (pickingUp != null) {
-                grabable = pickingUp;
+                // grabable = pickingUp;
                 pickingUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
             }
         }
@@ -320,6 +321,26 @@ public class PlayerController : MonoBehaviour
             obj.transform.parent = null;
             canDrop = false;
             pickingUp = null;
+        }
+    }
+
+    // dash power allows player to dash in the direction that they are currently moving in
+    public void dash()
+    {
+        Debug.Log("dashing");
+
+        // checks cooldown
+        if (Time.time >= nextDashTime) {
+            if (moveInput != Vector2.zero) {
+                // Calculate dash direction based on current movement direction
+                dashDirection = (transform.forward * moveInput.y + transform.right * moveInput.x).normalized * dashPower;
+            }
+            else {
+                // when not moving defualt dash will go forward
+                dashDirection = (transform.forward * 1 + transform.right * moveInput.x).normalized * dashPower;
+            }
+            // Update next dash time
+            nextDashTime = Time.time + dashCooldown;
         }
     }
 

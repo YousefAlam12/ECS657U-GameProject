@@ -26,29 +26,30 @@ public class PlayerInventory : MonoBehaviour
     }
 
     // dash power allows player to dash in the direction that they are currently moving in
-    public void dash()
-    {
-        Debug.Log("dashing");
+    // public void dash()
+    // {
+    //     Debug.Log("dashing");
 
-        // checks cooldown
-        if (Time.time >= nextDashTime) {
-            if (player.moveInput != Vector2.zero) {
-                // Calculate dash direction based on current movement direction
-                player.dashDirection = (transform.forward * player.moveInput.y + transform.right * player.moveInput.x).normalized * dashPower;
-            }
-            else {
-                // when not moving defualt dash will go forward
-                player.dashDirection = (transform.forward * 1 + transform.right * player.moveInput.x).normalized * dashPower;
-            }
-            // Update next dash time
-            nextDashTime = Time.time + dashCooldown;
-        }
-    }
+    //     // checks cooldown
+    //     if (Time.time >= nextDashTime) {
+    //         if (player.moveInput != Vector2.zero) {
+    //             // Calculate dash direction based on current movement direction
+    //             player.dashDirection = (transform.forward * player.moveInput.y + transform.right * player.moveInput.x).normalized * dashPower;
+    //         }
+    //         else {
+    //             // when not moving defualt dash will go forward
+    //             player.dashDirection = (transform.forward * 1 + transform.right * player.moveInput.x).normalized * dashPower;
+    //         }
+    //         // Update next dash time
+    //         nextDashTime = Time.time + dashCooldown;
+    //     }
+    // }
 
     public void usePowerUp()
     {
         if (powerup.GetComponent<Dash>() != null) {
-            dash();
+            // dash();
+            player.dash();
         }
         else if (powerup.GetComponent<Shoot>() != null)
         {

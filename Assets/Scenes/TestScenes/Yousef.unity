@@ -1566,6 +1566,8 @@ MonoBehaviour:
   pickingUp: {fileID: 0}
   dashDirection: {x: 0, y: 0, z: 0}
   dashDecay: 5
+  dashPower: 30
+  dashCooldown: 0.5
 --- !u!136 &1003856046
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2650,7 +2652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  damageCooldown: 1.5
+  damageCooldown: 0.5
   player: {fileID: 0}
 --- !u!114 &1590858898
 MonoBehaviour:
