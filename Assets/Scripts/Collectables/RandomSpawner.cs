@@ -28,21 +28,21 @@ public class RandomSpawner : MonoBehaviour
             {
                 retries++;
 
-                // Randomize position within the spawn area, with some spread factor to ensure they aren't clamped together
+                // Randomize position within the spawn area, with a controlled spread factor to prevent out-of-bounds spawning
                 Vector3 randomPosition = new Vector3(
-                    Random.Range(-spawnArea.x, spawnArea.x),
-                    Random.Range(-spawnArea.y, spawnArea.y),
-                    Random.Range(-spawnArea.z, spawnArea.z)
+                    Mathf.Clamp(Random.Range(-spawnArea.x, spawnArea.x), -spawnArea.x, spawnArea.x),  // Clamp to spawn area limits
+                    Mathf.Clamp(Random.Range(-spawnArea.y, spawnArea.y), -spawnArea.y, spawnArea.y),  // Clamp to spawn area limits
+                    Mathf.Clamp(Random.Range(-spawnArea.z, spawnArea.z), -spawnArea.z, spawnArea.z)   // Clamp to spawn area limits
                 );
 
                 // Offset this position by the Spawner's current position
                 randomPosition += transform.position;
 
-                // Apply spread factor: adding random offset based on the spread factor
+                // Apply spread factor: adding random offset based on the spread factor but ensuring it stays within bounds
                 randomPosition += new Vector3(
-                    Random.Range(-spreadFactor, spreadFactor),
-                    Random.Range(-spreadFactor, spreadFactor),
-                    Random.Range(-spreadFactor, spreadFactor)
+                    Mathf.Clamp(Random.Range(-spreadFactor, spreadFactor), -spawnArea.x, spawnArea.x),
+                    Mathf.Clamp(Random.Range(-spreadFactor, spreadFactor), -spawnArea.y, spawnArea.y),
+                    Mathf.Clamp(Random.Range(-spreadFactor, spreadFactor), -spawnArea.z, spawnArea.z)
                 );
 
                 // Check if the position is valid (on the "Spawnable" layer and not colliding with other objects)
