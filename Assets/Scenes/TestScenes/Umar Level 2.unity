@@ -7922,6 +7922,7 @@ MonoBehaviour:
     m_Bits: 8
   spreadFactor: 1
   allowSpawnInColliders: 0
+  maxRetries: 999999
 --- !u!1 &1323742112
 GameObject:
   m_ObjectHideFlags: 0
@@ -11145,8 +11146,9 @@ MonoBehaviour:
   spawnableLayer:
     serializedVersion: 2
     m_Bits: 1
-  spreadFactor: 20
+  spreadFactor: 50
   allowSpawnInColliders: 0
+  maxRetries: 0
 --- !u!4 &1658949407
 Transform:
   m_ObjectHideFlags: 0
