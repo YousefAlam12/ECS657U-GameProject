@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyShoot : MonoBehaviour
 {
     public Transform player;
-    public float shootingRange = 10.0f;
+    public float shootingRange = 20.0f;
     public GameObject enemyProjectile;
     public Transform spawnPoint;
-    public float projectileSpeed = 20f;
-    [SerializeField] private float reloadTime = 5f;
+    public float projectileSpeed = 30f;
+    [SerializeField] private float reloadTime = 3f;
     private float shootCooldown;
     private bool isFlyingEnemy; // Flag to check if this is a flying enemy
     private FlyingEnemyFollow flyingEnemyFollow;
