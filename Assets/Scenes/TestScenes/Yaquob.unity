@@ -773,6 +773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935cd205d2938ce4a883d47b997b4ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageToEnemy: 1
+  bounceForce: 10
 --- !u!65 &265222191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1155,6 +1157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935cd205d2938ce4a883d47b997b4ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageToEnemy: 1
+  bounceForce: 10
 --- !u!54 &402824841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1426,6 +1430,10 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 7769009841015371924, guid: 46abc82e7b5ee7342944f2558968c983, type: 3}
+    - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
+      propertyPath: bulletSpeed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
       propertyPath: bulletPrefab
       value: 
@@ -2425,6 +2433,8 @@ MonoBehaviour:
   pickingUp: {fileID: 0}
   dashDirection: {x: 0, y: 0, z: 0}
   dashDecay: 5
+  dashPower: 30
+  dashCooldown: 0.5
 --- !u!136 &1157052909
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4448,6 +4458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3923023781525213295, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4215173039160796691, guid: efd169936785781469d9d32d60d04d88, type: 3}
       propertyPath: player
       value: 
@@ -4476,10 +4490,6 @@ PrefabInstance:
     - target: {fileID: 1766232027044896307, guid: ffa0f16c0c37e9b4bb0a63747d894157, type: 3}
       propertyPath: m_Name
       value: FishEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1766232027044896307, guid: ffa0f16c0c37e9b4bb0a63747d894157, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773362665451187657, guid: ffa0f16c0c37e9b4bb0a63747d894157, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4542,17 +4552,9 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1157052912}
-    - target: {fileID: 6385047458044620300, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1157052908}
     - target: {fileID: 7190048688471846947, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
       propertyPath: m_Name
       value: SharkEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7190048688471846947, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
       propertyPath: m_LocalPosition.x
