@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 8572843762739816675}
   - component: {fileID: 1951379549748636597}
   - component: {fileID: 2642942118664435996}
-  - component: {fileID: 2182453670618027379}
-  - component: {fileID: 1685542640901094000}
   m_Layer: 0
   m_Name: SharkEnemy
   m_TagString: Enemy
@@ -51,7 +49,7 @@ MonoBehaviour:
   player: {fileID: 0}
   flyingEnemy: {fileID: 2642942118664435996}
   hoverHeight: 1.2
-  aggroRange: 10
+  aggroRange: 20
 --- !u!195 &2642942118664435996
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -62,7 +60,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 2.5
-  m_Speed: 8
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -74,39 +72,6 @@ NavMeshAgent:
   m_BaseOffset: 0.8
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &2182453670618027379
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7190048688471846947}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 5.7}
-  m_Center: {x: 0, y: 0.2, z: 0}
---- !u!114 &1685542640901094000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7190048688471846947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935cd205d2938ce4a883d47b997b4ea8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2275522938312144702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,10 +140,16 @@ PrefabInstance:
       addedObject: {fileID: 8070167409519084111}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7413058672783008285}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 6385047458044620300}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8273208356169556101}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5512537955252864897}
   m_SourcePrefab: {fileID: 100100000, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}
 --- !u!1 &1393056903622560367 stripped
 GameObject:
@@ -231,8 +202,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.8, y: 1, z: 1}
+  m_Size: {x: 5.9, y: 0.6, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &7413058672783008285
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393056903622560367}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.8, y: 0.5, z: 0.7}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &6385047458044620300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +252,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2e0835d539b4f44bb7e9628a7f92e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 7
+  maxHealth: 6
+--- !u!114 &5512537955252864897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393056903622560367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935cd205d2938ce4a883d47b997b4ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToEnemy: 3
+  bounceForce: 10
 --- !u!4 &1738091982953402581 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}

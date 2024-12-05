@@ -7,7 +7,7 @@ public class Shoot : MonoBehaviour
     private PlayerInventory inventory;
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float bulletSpeed = 20f;
+    [SerializeField] private float bulletSpeed = 30f;
     [SerializeField] private float shootCooldown = 0.5f;
     private float nextShootTime = 0f;
 
@@ -44,8 +44,8 @@ public class Shoot : MonoBehaviour
             // Update the cooldown timer
             nextShootTime = Time.time + shootCooldown;
 
-            // Destroy projectile after 5 seconds
-            Destroy(projectileObj, 5f);
+            // Destroy projectile after 3 seconds
+            Destroy(projectileObj, 3f);
         }
     }
 

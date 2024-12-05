@@ -773,6 +773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935cd205d2938ce4a883d47b997b4ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageToEnemy: 1
+  bounceForce: 10
 --- !u!65 &265222191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1155,6 +1157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935cd205d2938ce4a883d47b997b4ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageToEnemy: 1
+  bounceForce: 10
 --- !u!54 &402824841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1426,6 +1430,10 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 7769009841015371924, guid: 46abc82e7b5ee7342944f2558968c983, type: 3}
+    - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
+      propertyPath: bulletSpeed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
       propertyPath: bulletPrefab
       value: 
@@ -1757,6 +1765,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626056470}
   m_CullTransparentMesh: 1
+--- !u!4 &663134480 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+  m_PrefabInstance: {fileID: 194860420823208022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697399849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,6 +1936,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704638367}
   m_CullTransparentMesh: 1
+--- !u!4 &705935607 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+  m_PrefabInstance: {fileID: 570990235299214451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &826513915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,6 +2443,8 @@ MonoBehaviour:
   pickingUp: {fileID: 0}
   dashDirection: {x: 0, y: 0, z: 0}
   dashDecay: 5
+  dashPower: 30
+  dashCooldown: 0.5
 --- !u!136 &1157052909
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3331,7 +3351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746896593}
   m_Layer: 0
-  m_Name: SpawnPointF
+  m_Name: SpawnPointFly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3971,7 +3991,9 @@ Transform:
   - {fileID: 265222194}
   - {fileID: 1025858955}
   - {fileID: 1145202179}
+  - {fileID: 705935607}
   - {fileID: 1118025322}
+  - {fileID: 663134480}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2046382683
@@ -4396,6 +4418,144 @@ Transform:
   m_Children: []
   m_Father: {fileID: 191855333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &194860420823208022
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1965249404}
+    m_Modifications:
+    - target: {fileID: 834062220713694941, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_Name
+      value: ShootingSharkEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459007180444815939, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1157052912}
+    - target: {fileID: 8309054756772154699, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1157052912}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+--- !u!1001 &570990235299214451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1965249404}
+    m_Modifications:
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176115384857025984, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174664061098550103, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1157052912}
+    - target: {fileID: 5398760871595339322, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_Name
+      value: ShootingFishEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398760871595339322, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649821422144338083, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1157052908}
+    - target: {fileID: 7959981383280927836, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1157052912}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 690a124143fbaec44a71e340fd561964, type: 3}
 --- !u!1001 &1207058261889027085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4448,6 +4608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3923023781525213295, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4215173039160796691, guid: efd169936785781469d9d32d60d04d88, type: 3}
       propertyPath: player
       value: 
@@ -4469,17 +4633,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1965249404}
     m_Modifications:
-    - target: {fileID: 1019576698626640042, guid: ffa0f16c0c37e9b4bb0a63747d894157, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1157052908}
     - target: {fileID: 1766232027044896307, guid: ffa0f16c0c37e9b4bb0a63747d894157, type: 3}
       propertyPath: m_Name
       value: FishEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1766232027044896307, guid: ffa0f16c0c37e9b4bb0a63747d894157, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5773362665451187657, guid: ffa0f16c0c37e9b4bb0a63747d894157, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4542,17 +4702,9 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1157052912}
-    - target: {fileID: 6385047458044620300, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1157052908}
     - target: {fileID: 7190048688471846947, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
       propertyPath: m_Name
       value: SharkEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7190048688471846947, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
       propertyPath: m_LocalPosition.x
