@@ -51,8 +51,8 @@ public class PlayerController : MonoBehaviour
     private float nextDashTime = 0f;
     private PlayerInventory inventory;
 
-
- 
+    // animator reference
+    public Animator playerAnimator;
 
     void Start()
     {
@@ -347,6 +347,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovePlayer();
+
+        // Update Animator with movement intensity
+        float movementIntensity = new Vector3(moveDirection.x, 0, moveDirection.z).magnitude / sprintSpeed; // Normalised movement intensity
+        playerAnimator.SetFloat("Speed", movementIntensity);
+        playerAnimator.SetBool("isGrounded", controller.isGrounded);
     }
 
 
