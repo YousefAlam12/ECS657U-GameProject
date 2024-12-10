@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
     private PlayerInventory inventory;
+    public Image icon;
+    public Sprite powerIcon;
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed = 30f;
@@ -14,6 +17,10 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         inventory = FindAnyObjectByType<PlayerInventory>();
+
+        // icon = GameObject.FindGameObjectWithTag("Icon").GetComponent<Image>();
+        // inventory.icon = icon;
+        // icon.gameObject.SetActive(false); 
     }
 
     void OnTriggerEnter(Collider other)
@@ -23,6 +30,10 @@ public class Shoot : MonoBehaviour
             inventory.powerup = gameObject;
             inventory.isPoweredup = true;
             gameObject.SetActive(false);
+
+            // setting the icon to the current powerup
+            inventory.icon.sprite = powerIcon;
+            inventory.icon.gameObject.SetActive(true);
         }
     }
 

@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class PlayerInventory : MonoBehaviour
 {
+    // Treasure varibales 
     public int NumberOfTreasure;
+    public TextMeshProUGUI treasureTxt;
+    public int totalTreasure;
+
     public bool isPoweredup;
     public GameObject powerup;
     private PlayerController player;
+
+    // icons for powerups
+    public Image icon;
 
     // variables for the Dash powerup
     public float dashDecay = 5f;
@@ -18,11 +28,15 @@ public class PlayerInventory : MonoBehaviour
     void Start()
     {
         player = GetComponent<PlayerController>();
+        treasureTxt.text = NumberOfTreasure + "/" + totalTreasure;
+        icon = GameObject.FindGameObjectWithTag("Icon").GetComponent<Image>();
+        icon.gameObject.SetActive(false); 
     }
 
     public void TreasureCollected()
     {
         NumberOfTreasure++;
+        treasureTxt.text = NumberOfTreasure + "/" + totalTreasure;
     }
 
     // dash power allows player to dash in the direction that they are currently moving in
@@ -45,6 +59,7 @@ public class PlayerInventory : MonoBehaviour
     //     }
     // }
 
+    // sets the powerup ability to be used by the player
     public void usePowerUp()
     {
         if (powerup.GetComponent<Dash>() != null) {

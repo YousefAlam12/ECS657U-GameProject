@@ -40,9 +40,13 @@ public class HealthManager : MonoBehaviour
         }
         healthBar.setHealth(currentHealth);
 
-        // lose powerup on hit
+        // lose powerup on hit and reflect onto UI
         inventory.powerup = null;
         inventory.isPoweredup = false;
+        if (inventory.icon)
+        {
+            inventory.icon.gameObject.SetActive(false);
+        }
     }
 
     void Update() {

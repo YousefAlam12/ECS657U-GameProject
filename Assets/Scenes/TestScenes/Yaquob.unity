@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1427,14 +1427,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 973376085}
     - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 7769009841015371924, guid: 46abc82e7b5ee7342944f2558968c983, type: 3}
-    - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
-      propertyPath: bulletSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 7769009841015371924, guid: 0fbb21d1cbe4e624d84519a7ef154a01, type: 3}
@@ -2324,8 +2316,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberOfTreasure: 0
+  treasureTxt: {fileID: 0}
+  totalTreasure: 0
   isPoweredup: 0
   powerup: {fileID: 0}
+  icon: {fileID: 0}
   dashDecay: 5
   dashPower: 20
   dashCooldown: 0.5
@@ -4020,6 +4015,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7c6d4510a1b222946a55ba22c17f00c3, type: 2}
+    - target: {fileID: 3595372490719337718, guid: 3c939450f9e639f458f0266779cbe5da, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6731013651964648641, guid: 3c939450f9e639f458f0266779cbe5da, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.43643558

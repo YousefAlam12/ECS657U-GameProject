@@ -100,7 +100,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -118,3 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80b02b4559734d4e90a83d6dbc845ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  powerIcon: {fileID: 21300000, guid: e43e19aec3a41a8449689e7b5fef1d78, type: 3}
+  projectile: {fileID: 7769009841015371924, guid: 46abc82e7b5ee7342944f2558968c983, type: 3}
+  firePoint: {fileID: 0}
+  bulletSpeed: 30
+  shootCooldown: 0.5

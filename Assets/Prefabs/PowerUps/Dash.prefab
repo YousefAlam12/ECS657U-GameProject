@@ -118,3 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c7a10e77d27c84ca2fa83026262bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  powerIcon: {fileID: 21300000, guid: d436b97da829b924c9d6324f63a6fcbe, type: 3}

@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Pickup
   - JumpPad
+  - Dash-Icon
+  - Shoot-Icon
+  - Icon
   layers:
   - Default
   - TransparentFX
