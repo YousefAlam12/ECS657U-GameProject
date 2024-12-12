@@ -54,6 +54,9 @@ public class PlayerController : MonoBehaviour
     // animator reference
     public Animator playerAnimator;
 
+    // pause switch
+    private bool isPaused;
+
     void Start()
     {
         // using rigid body
@@ -65,6 +68,7 @@ public class PlayerController : MonoBehaviour
         o2Bar = FindAnyObjectByType<OxygenBar>();
         camera = FindAnyObjectByType<CameraController>();
         inventory = GetComponent<PlayerInventory>();
+        isPaused = false;
 
         // change stats to make game easier
         if (MainMenuManager.isEasy())
@@ -178,6 +182,17 @@ public class PlayerController : MonoBehaviour
         {
             // inventory.ability();
             inventory.usePowerUp();
+        }
+    }
+
+    // Pauses the game
+    public void OnPause(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            isPaused = !isPaused;
+            Debug.Log(isPaused);
+            FindAnyObjectByType<GameManager>().Pause(isPaused);
         }
     }
 

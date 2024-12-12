@@ -380,6 +380,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!65 &3989445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1804,6 +1807,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!65 &210681046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3449,6 +3455,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &472393918
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3841,6 +3850,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &482528079
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8144,6 +8156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1015665743
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8567,6 +8582,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!65 &1060844056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9073,6 +9091,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!65 &1082956987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13044,6 +13065,7 @@ MonoBehaviour:
   gameOverText: {fileID: 993282932}
   respawnPoint: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  currentLvl: 1
 --- !u!114 &1575479057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16546,6 +16568,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &2047852917
 NavMeshAgent:
   m_ObjectHideFlags: 0

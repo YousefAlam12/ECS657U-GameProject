@@ -16542,6 +16542,7 @@ MonoBehaviour:
   gameOverText: {fileID: 927295562}
   respawnPoint: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  currentLvl: 2
 --- !u!114 &2096599488
 MonoBehaviour:
   m_ObjectHideFlags: 0

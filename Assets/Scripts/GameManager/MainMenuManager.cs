@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public static float sensitivity;
+    // public static float sensitivity;
     public static bool easyMode = false;
+
+    public void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 
     public void StartGame()
     {
@@ -43,6 +49,16 @@ public class MainMenuManager : MonoBehaviour
     public static bool isEasy()
     {
         return easyMode;
+    }
+
+    public void LoadGame()
+    {
+        GameData data = SaveSystem.LoadGame();
+        
+        easyMode = data.isEasy;
+        OptionsManager.playerSens = data.sensitivity;
+        string lvl = "Level" + data.level;
+        SceneManager.LoadScene(lvl);
     }
 
     void Update()

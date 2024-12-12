@@ -7,7 +7,7 @@ using TMPro;
 public class OptionsManager : MonoBehaviour
 {
     // global var to allow camera to access its value
-    static float playerSens = 0.1f;
+    public static float playerSens = 0.1f;
     public TextMeshProUGUI txt;
     public Slider slider; 
 
