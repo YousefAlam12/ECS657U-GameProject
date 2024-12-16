@@ -14,3 +14,4 @@
 
 - Assets used:
     - https://assetstore.unity.com/packages/3d/characters/animals/fish/fish-polypack-202232
+    - https://assetstore.unity.com/packages/3d/characters/humanoids/lowpoly-toon-modular-character-free-demo-256309
