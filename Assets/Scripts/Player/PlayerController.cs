@@ -98,6 +98,11 @@ public class PlayerController : MonoBehaviour
             {
                 moveDirection.y = jumpForce;
                 isWallJump = false;
+                PlayerSoundManager soundManager = UnityEngine.Object.FindAnyObjectByType<PlayerSoundManager>();
+                if (soundManager != null)
+                {
+                    soundManager.PlayJumpSound();
+                }
             }
             else
             {
