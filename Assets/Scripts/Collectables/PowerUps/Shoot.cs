@@ -29,6 +29,11 @@ public class Shoot : MonoBehaviour
         {
             inventory.powerup = gameObject;
             inventory.isPoweredup = true;
+            PlayerSoundManager soundManager = UnityEngine.Object.FindAnyObjectByType<PlayerSoundManager>();
+            if (soundManager != null)
+            {
+                soundManager.PlayPowerUpSound();
+            }
             gameObject.SetActive(false);
 
             // setting the icon to the current powerup
