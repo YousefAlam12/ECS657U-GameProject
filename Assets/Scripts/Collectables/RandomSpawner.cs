@@ -9,7 +9,7 @@ public class RandomSpawner : MonoBehaviour
     public Vector3 spawnArea;
 
     public LayerMask spawnableLayer;  // Add a LayerMask to filter for the "Spawnable" layer
-    public float spreadFactor = 1f;  // Factor to control the spread of the objects (higher means more spread out)
+    public float spreadFactor = 0.5f;  // Factor to control the spread of the objects (higher means more spread out)
     public bool allowSpawnInColliders = false;  // Control whether objects can spawn inside existing colliders
     public int maxRetries = 5;  // Maximum retries to spawn each object
 
@@ -73,21 +73,33 @@ public class RandomSpawner : MonoBehaviour
     }
 
     // Function to check if the position is on the "Spawnable" layer and not colliding with other objects (unless allowed)
+    public float spawnHeightOffset = 1f;  // Adjustable height offset for collision avoidance
+
     bool IsSpawnable(Vector3 position)
     {
         // Cast a ray downward from the spawn position to check if it hits the "Spawnable" layer
         RaycastHit hit;
         if (Physics.Raycast(position + Vector3.up * 100f, Vector3.down, out hit, Mathf.Infinity, spawnableLayer))
         {
-            // If spawning inside colliders is not allowed, use Physics.CheckSphere to check for overlapping colliders
-            if (!allowSpawnInColliders && Physics.CheckSphere(position, spreadFactor, spawnableLayer))
+            // Adjust position height if spawning inside colliders is not allowed
+            if (!allowSpawnInColliders)
             {
-                return false;  // Return false if there's already something in the way
+                // Check for overlapping colliders
+                if (Physics.CheckSphere(position, spreadFactor, spawnableLayer))
+                {
+                    position.y += spawnHeightOffset;  // Apply the height offset
+                                                      // Re-check after adjustment
+                    if (Physics.CheckSphere(position, spreadFactor, spawnableLayer))
+                    {
+                        return false;  // Still colliding after adjustment
+                    }
+                }
             }
             return true;  // Position is valid for spawning
         }
         return false;  // No valid position on the "Spawnable" layer
     }
+
 
     // Draws spawn area in the editor
     private void OnDrawGizmosSelected()

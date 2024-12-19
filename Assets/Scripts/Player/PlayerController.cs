@@ -251,9 +251,9 @@ public class PlayerController : MonoBehaviour
                     moveSpeed = sprintSpeed;
                     
                     // only lose O2 when actually moving
-                    if (moveInput.x != 0 || moveInput.y != 0)
+                    if (moveInput.x != 0 || moveDirection.z != 0)
                     {
-                        o2Bar.oxygen -= 5f * Time.deltaTime;
+                        o2Bar.oxygen -= 9f * Time.deltaTime;
                     }
                 }
                 else {
