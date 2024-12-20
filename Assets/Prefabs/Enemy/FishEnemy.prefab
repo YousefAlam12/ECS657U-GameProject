@@ -288,3 +288,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 1766232027044896307}
+  agent: {fileID: 0}
