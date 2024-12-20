@@ -267,6 +267,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToEnemy: 3
   bounceForce: 10
+  pushBackDuration: 0.5
+  enemy: {fileID: 7190048688471846947}
+  agent: {fileID: 0}
 --- !u!4 &1738091982953402581 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}

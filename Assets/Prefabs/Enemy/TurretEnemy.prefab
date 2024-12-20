@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   aggroRange: 30
-  turretHead: {fileID: 8293250872684093749}
+  turretHead: {fileID: 0}
 --- !u!114 &4215173039160796691
 MonoBehaviour:
   m_ObjectHideFlags: 0
