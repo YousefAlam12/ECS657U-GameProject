@@ -9635,9 +9635,6 @@ MonoBehaviour:
   isPoweredup: 0
   powerup: {fileID: 0}
   icon: {fileID: 0}
-  dashDecay: 5
-  dashPower: 30
-  dashCooldown: 0.5
 --- !u!114 &1141812081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11290,7 +11287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -334.60004, y: 68.50006}
+  m_AnchoredPosition: {x: -325.4, y: 68.50006}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341434176
@@ -13066,6 +13063,8 @@ MonoBehaviour:
   respawnPoint: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
   currentLvl: 1
+  isEasy: 0
+  sensitivity: 0
 --- !u!114 &1575479057
 MonoBehaviour:
   m_ObjectHideFlags: 0
