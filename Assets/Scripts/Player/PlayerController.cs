@@ -253,7 +253,7 @@ public class PlayerController : MonoBehaviour
                     // only lose O2 when actually moving
                     if (moveInput.x != 0 || moveDirection.z != 0)
                     {
-                        o2Bar.oxygen -= 9f * Time.deltaTime;
+                        o2Bar.oxygen -= -10f * Time.deltaTime;
                     }
                 }
                 else {
