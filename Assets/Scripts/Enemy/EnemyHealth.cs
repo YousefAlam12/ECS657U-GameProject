@@ -17,6 +17,11 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " took damage! Current health: " + currentHealth);
+        PlayerSoundManager soundManager = UnityEngine.Object.FindAnyObjectByType<PlayerSoundManager>();
+        if (soundManager != null)
+        {
+            soundManager.PlayDamageSound();
+        }
 
         if (currentHealth <= 0)
         {

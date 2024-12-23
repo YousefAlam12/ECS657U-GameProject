@@ -40,6 +40,12 @@ public class HealthManager : MonoBehaviour
         }
         healthBar.setHealth(currentHealth);
 
+        PlayerSoundManager soundManager = UnityEngine.Object.FindAnyObjectByType<PlayerSoundManager>();
+        if (soundManager != null)
+        {
+            soundManager.PlayLoseSound();
+        }
+
         // lose powerup on hit and reflect onto UI
         inventory.powerup = null;
         inventory.isPoweredup = false;

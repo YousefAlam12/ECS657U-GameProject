@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Shoot : MonoBehaviour
 {
     private PlayerInventory inventory;
-    public Image icon;
+    // public Image icon;
     public Sprite powerIcon;
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform firePoint;
@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         inventory = FindAnyObjectByType<PlayerInventory>();
-
+        firePoint = GameObject.Find("Player").transform.GetChild(0);
         // icon = GameObject.FindGameObjectWithTag("Icon").GetComponent<Image>();
         // inventory.icon = icon;
         // icon.gameObject.SetActive(false); 
@@ -29,6 +29,11 @@ public class Shoot : MonoBehaviour
         {
             inventory.powerup = gameObject;
             inventory.isPoweredup = true;
+            PlayerSoundManager soundManager = UnityEngine.Object.FindAnyObjectByType<PlayerSoundManager>();
+            if (soundManager != null)
+            {
+                soundManager.PlayPowerUpSound();
+            }
             gameObject.SetActive(false);
 
             // setting the icon to the current powerup
