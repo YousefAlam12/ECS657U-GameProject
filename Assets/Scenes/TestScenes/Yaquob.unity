@@ -4612,6 +4612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingSharkEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 834062220713694941, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.54
