@@ -982,6 +982,11 @@ Transform:
   - {fileID: 1749218473}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &86322764 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1243667763529584087, guid: efd169936785781469d9d32d60d04d88, type: 3}
+  m_PrefabInstance: {fileID: 1763029867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &96283961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1527,14 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: turretHead
+      value: 
+      objectReference: {fileID: 86322764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1541,7 +1554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 991546205587972948, guid: efd169936785781469d9d32d60d04d88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.95
+      value: 27.56
       objectReference: {fileID: 0}
     - target: {fileID: 991546205587972948, guid: efd169936785781469d9d32d60d04d88, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1599,6 +1612,14 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: turretHead
+      value: 
+      objectReference: {fileID: 86322764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3404,6 +3425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingFishEnemy Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7959981383280927836, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3465,6 +3490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingFishEnemy Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7959981383280927836, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3711,6 +3740,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7459007180444815939, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
     - target: {fileID: 8309054756772154699, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: player
       value: 
@@ -4616,7 +4649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358571016729653143, guid: 4b1bbb1922f9e794d9bda7a6e1cc0ae5, type: 3}
       propertyPath: m_CollisionDetection
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5569459822685788820, guid: 4b1bbb1922f9e794d9bda7a6e1cc0ae5, type: 3}
       propertyPath: walkSpeed
@@ -4987,6 +5020,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingFishEnemy Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7959981383280927836, guid: 690a124143fbaec44a71e340fd561964, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6281,6 +6318,14 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: turretHead
+      value: 
+      objectReference: {fileID: 86322764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6891,6 +6936,14 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: turretHead
+      value: 
+      objectReference: {fileID: 86322764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8682,6 +8735,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7459007180444815939, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
     - target: {fileID: 8309054756772154699, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: player
       value: 
@@ -10683,6 +10740,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7459007180444815939, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
     - target: {fileID: 8309054756772154699, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: player
       value: 
@@ -15391,6 +15452,14 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: turretHead
+      value: 
+      objectReference: {fileID: 86322764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16818,6 +16887,14 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: turretHead
+      value: 
+      objectReference: {fileID: 86322764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17009,6 +17086,14 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894660876}
+    - target: {fileID: 9165935626612469058, guid: efd169936785781469d9d32d60d04d88, type: 3}
+      propertyPath: turretHead
+      value: 
+      objectReference: {fileID: 86322764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
