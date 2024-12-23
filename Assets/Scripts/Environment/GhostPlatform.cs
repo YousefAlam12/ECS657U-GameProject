@@ -20,11 +20,12 @@ public class GhostPlatform : MonoBehaviour
     // on collision sets the platform to fade
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == playerTag)
+        if (collision.collider.CompareTag(playerTag))
         {
             myAnim.SetBool("Trigger", true);
         }
     }
+
 
     // restores the platform after dissapearing if set
     public void TriggerReset()
