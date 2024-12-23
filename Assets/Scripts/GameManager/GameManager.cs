@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public int currentLvl;
     public bool isEasy;
     public float sensitivity;
+    public int secretTreasure;
 
 
     // flag for respawn
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
         // Varibales to hold current state of game
         isEasy = MainMenuManager.isEasy();
         sensitivity = OptionsManager.GetSensitivity();
+        secretTreasure = PlayerInventory.SecretTreasure;
 
         // Save the game state upon the start of every level
         SaveSystem.SaveGame(this);
@@ -70,10 +72,24 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("Level2");
         }
 
-        // Prototype finish screen 
+        // lvl2 transitions to lvl3 when treasure is obtained 
         if (playerInventory.NumberOfTreasure == playerInventory.totalTreasure && currentLvl == 2)
         {
-            SceneManager.LoadScene("MainMenuScreen");
+            // SceneManager.LoadScene("MainMenuScreen");
+            SceneManager.LoadScene("Level3");
+        }
+
+        if (playerInventory.NumberOfTreasure == playerInventory.totalTreasure && currentLvl == 3)
+        {
+            if (secretTreasure == 3)
+            {
+                SceneManager.LoadScene("OptionsMenu");
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenuScreen");
+            }
+            // SceneManager.LoadScene("Level3");
         }
     }
 
@@ -124,7 +140,9 @@ public class GameManager : MonoBehaviour
     {
         if (player != null && respawnPoint != null)
         {
-            player.transform.position = respawnPoint; // Move player to respawn point
+            // Move player back to original spawn point
+            player.transform.position = respawnPoint;
+            player.GetComponent<CheckPoint>().gameRespawn.UpdateRespawnPoint(respawnPoint);
 
             // Restore health on respaw when easy
             if (MainMenuManager.isEasy())
@@ -140,6 +158,7 @@ public class GameManager : MonoBehaviour
         if (isPaused)
         {
             gameOverPanel.SetActive(true);
+            restartButton.gameObject.SetActive(false);
             Time.timeScale = 0f; // Pause the game
 
             Cursor.lockState = CursorLockMode.None;

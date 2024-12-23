@@ -1493,6 +1493,14 @@ PrefabInstance:
       propertyPath: totalTreasure
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5569459822685788820, guid: 4b1bbb1922f9e794d9bda7a6e1cc0ae5, type: 3}
+      propertyPath: walkSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569459822685788820, guid: 4b1bbb1922f9e794d9bda7a6e1cc0ae5, type: 3}
+      propertyPath: sprintSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6773715866996324718, guid: 4b1bbb1922f9e794d9bda7a6e1cc0ae5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6
@@ -9193,7 +9201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1192675011}
   oxygen: 0
-  maxOxygen: 100
+  maxOxygen: 150
   health: {fileID: 0}
 --- !u!114 &1192675011
 MonoBehaviour:
@@ -16634,6 +16642,7 @@ MonoBehaviour:
   currentLvl: 2
   isEasy: 0
   sensitivity: 0
+  secretTreasure: 0
 --- !u!114 &2096599488
 MonoBehaviour:
   m_ObjectHideFlags: 0

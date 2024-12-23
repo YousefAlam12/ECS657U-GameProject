@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
 {
     // Treasure varibales 
     public int NumberOfTreasure;
+    public static int SecretTreasure;
     public TextMeshProUGUI treasureTxt;
     public int totalTreasure;
 
@@ -19,12 +20,6 @@ public class PlayerInventory : MonoBehaviour
     // icons for powerups
     public Image icon;
 
-    // variables for the Dash powerup
-    // public float dashDecay = 5f;
-    // public float dashPower = 30f;
-    // public float dashCooldown = 0.5f;
-    // private float nextDashTime = 0f;
-
     void Start()
     {
         player = GetComponent<PlayerController>();
@@ -33,10 +28,22 @@ public class PlayerInventory : MonoBehaviour
         icon.gameObject.SetActive(false); 
     }
 
+    // adds to NumberOfTreasure and reflects across the UI
     public void TreasureCollected()
     {
         NumberOfTreasure++;
         treasureTxt.text = NumberOfTreasure + "/" + totalTreasure;
+    }
+
+    // adds to the SecretTreasure count
+    public void SecretTreasureCollected()
+    {
+        SecretTreasure++;
+    }
+
+    public int getSecretTreasure()
+    {
+        return SecretTreasure;
     }
 
     // dash power allows player to dash in the direction that they are currently moving in

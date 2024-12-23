@@ -5,7 +5,7 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] GameRespawn gameRespawn;
+    [SerializeField] public GameRespawn gameRespawn;
     [SerializeField] List<GameObject> checkPoints;
 
     void Start() {

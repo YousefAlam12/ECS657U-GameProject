@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectilePlayerDamage : MonoBehaviour
 {
-    public int damageAmount = 1;
+    public int damageAmount = 2;
     //private bool hasDealtDamage = false;
 
     void OnCollisionEnter(Collision other)

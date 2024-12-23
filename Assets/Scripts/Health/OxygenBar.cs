@@ -7,11 +7,15 @@ public class OxygenBar : MonoBehaviour
 {
     public Slider slider;
     public float oxygen;
-    public float maxOxygen = 100f;
+    public float maxOxygen = 200f;
     public HealthManager health;
 
     void Start()
     {
+        if (MainMenuManager.isEasy())
+        {
+            maxOxygen = 300f;            
+        }
         slider.maxValue = maxOxygen;
         oxygen = maxOxygen;
         health = FindAnyObjectByType<HealthManager>();

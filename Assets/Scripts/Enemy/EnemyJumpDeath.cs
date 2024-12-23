@@ -104,20 +104,27 @@ public class EnemyJumpDeath : MonoBehaviour
                 }
             }
 
-            // Bounce the player back
             PlayerController playerController = other.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                Vector3 direction = (enemy.transform.position - other.transform.position).normalized;
-                pushBackDirection = direction * bounceForce;
-                isPushedBack = true;
-                pushBackTimer = pushBackDuration;
+            playerController.Bounce(1f);
 
-                // trigger a player bounceback
-                playerController.Bounce(1f);
-                // Vector3 d = other.transform.position - enemy.transform.position;
-                // playerController.Knockback(new Vector3(d.x, 0.5f, d.z));
+            if (enemyHealth.currentHealth > 0)
+            {
+                // Bounce the player back
+                // PlayerController playerController = other.GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    Vector3 direction = (enemy.transform.position - other.transform.position).normalized;
+                    pushBackDirection = direction * bounceForce;
+                    isPushedBack = true;
+                    pushBackTimer = pushBackDuration;
+
+                    // trigger a player bounceback
+                    // playerController.Bounce(1f);
+                    // Vector3 d = other.transform.position - enemy.transform.position;
+                    // playerController.Knockback(new Vector3(0.5f, 0.5f, 0.5f));
+                }
             }
+
         }
     }
 

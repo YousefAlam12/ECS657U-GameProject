@@ -70,12 +70,11 @@ public class PlayerController : MonoBehaviour
         inventory = GetComponent<PlayerInventory>();
         isPaused = false;
 
-        // change stats to make game easier
+        // change jump stats to make game easier (adds more leniency to timed jumps)
         if (MainMenuManager.isEasy())
         {
             Debug.Log("easy mode");
             jumpForce = 10f;
-            o2Bar.maxOxygen = 300f;
         }
     }
 
@@ -253,7 +252,9 @@ public class PlayerController : MonoBehaviour
                     // only lose O2 when actually moving
                     if (moveInput.x != 0 || moveDirection.z != 0)
                     {
-                        o2Bar.oxygen -= 10f * Time.deltaTime;
+                        // Hard mode results in more o2 being drained
+                        // o2Bar.oxygen -= 10f * Time.deltaTime;
+                        o2Bar.oxygen -= 5f * Time.deltaTime;
                     }
                 }
                 else {
@@ -371,6 +372,7 @@ public class PlayerController : MonoBehaviour
         // Update Animator with movement intensity
         float movementIntensity = new Vector3(moveDirection.x, 0, moveDirection.z).magnitude / sprintSpeed; // Normalised movement intensity
         playerAnimator.SetFloat("Speed", movementIntensity);
+        // playerAnimator.SetFloat("Speed", moveSpeed);
         playerAnimator.SetBool("isGrounded", controller.isGrounded);
     }
 
