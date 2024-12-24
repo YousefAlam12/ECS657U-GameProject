@@ -33,7 +33,8 @@ public class CameraController : MonoBehaviour
 
         // pivot used as intermediate object to rotate camera vertically instead of directly the player (prevent player from rotating verticaly)
         pivot.transform.position = focalPoint.transform.position;
-        pivot.transform.parent = focalPoint.transform;
+        // pivot.transform.parent = focalPoint.transform;
+        pivot.transform.parent = null;
 
         // hide mouse
         Cursor.lockState = CursorLockMode.Locked;
@@ -42,10 +43,13 @@ public class CameraController : MonoBehaviour
     // use LateUpdate to prevent camera jerking
     void LateUpdate()
     {
+        pivot.transform.position = focalPoint.transform.position;
+
         // get mouseX position and rotate player on its Y-axis based on the value to move horizontaly
         //float horizontal = Input.GetAxis("Mouse X") * mouseSensitivity;
          float horizontal = lookInput.x * mouseSensitivity;
         focalPoint.Rotate(0, horizontal, 0);
+        // pivot.Rotate(0, horizontal, 0);
 
         // get mouseY position and rotate pivot (prevent player from rotating verticaly) on its X-axis based on the value to move verticaly
         //float vertical = Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -64,6 +68,7 @@ public class CameraController : MonoBehaviour
         // rotating camera to follow the players rotation
         // converting player rotation into quaternion angle to resposition the camera
         float cameraAdjustY = focalPoint.eulerAngles.y;
+        // float cameraAdjustY = pivot.eulerAngles.y;
         float cameraAdjustX = pivot.eulerAngles.x;
         Quaternion rotation = Quaternion.Euler(cameraAdjustX, cameraAdjustY, 0);
         transform.position = focalPoint.position - (rotation * offset);

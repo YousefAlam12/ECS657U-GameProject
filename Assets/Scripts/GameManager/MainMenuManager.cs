@@ -7,6 +7,7 @@ public class MainMenuManager : MonoBehaviour
 {
     // public static float sensitivity;
     public static bool easyMode = false;
+    public static bool hardMode = false;
 
     public void Start()
     {
@@ -38,17 +39,33 @@ public class MainMenuManager : MonoBehaviour
     public void setEasy()
     {
         easyMode = true;
+        hardMode = false;
     }
 
     // sets difficulty to standard when button is clicked
     public void setStandard()
     {
         easyMode = false;
+        hardMode = false;
     }
 
+    // sets difficulty to hard when button is clicked
+    public void setHard()
+    {
+        easyMode = false;
+        hardMode = true;
+    }
+
+    // returns ans to if game is on easy mode
     public static bool isEasy()
     {
         return easyMode;
+    }
+
+    // returns ans to if game is on hard mode
+    public static bool isHard()
+    {
+        return hardMode;
     }
 
     public void LoadGame()
@@ -56,6 +73,7 @@ public class MainMenuManager : MonoBehaviour
         GameData data = SaveSystem.LoadGame();
         
         easyMode = data.isEasy;
+        hardMode = data.isHard;
         OptionsManager.playerSens = data.sensitivity;
         string lvl = "Level" + data.level;
         PlayerInventory.SecretTreasure = data.secretTreasure;

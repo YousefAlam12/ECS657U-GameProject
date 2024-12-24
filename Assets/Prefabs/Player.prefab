@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3791905506945465945}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.55}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.7692308, z: 0.54999995}
+  m_LocalScale: {x: 1, y: 0.7692308, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6773715866996324718}
+  m_Father: {fileID: 8769669068362890302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8479563827868058183
 GameObject:
@@ -72,7 +72,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4767102566633880935}
   - {fileID: 8769669068362890302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -179,6 +178,8 @@ MonoBehaviour:
   dashPower: 30
   dashCooldown: 0.5
   playerAnimator: {fileID: 3410407276597339716}
+  pivot: {fileID: 0}
+  playerModel: {fileID: 8286569581287335556}
 --- !u!143 &6832602875451837624
 CharacterController:
   m_ObjectHideFlags: 0
@@ -507,12 +508,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7423472531735332492, guid: 3c939450f9e639f458f0266779cbe5da, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 4767102566633880935}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c939450f9e639f458f0266779cbe5da, type: 3}
 --- !u!95 &3410407276597339716 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3595372490719337718, guid: 3c939450f9e639f458f0266779cbe5da, type: 3}
+  m_PrefabInstance: {fileID: 2211662564305435314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8286569581287335556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7804360210788916278, guid: 3c939450f9e639f458f0266779cbe5da, type: 3}
   m_PrefabInstance: {fileID: 2211662564305435314}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8769669068362890302 stripped

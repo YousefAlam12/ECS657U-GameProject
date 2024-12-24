@@ -26,7 +26,7 @@ public class OxygenBar : MonoBehaviour
         slider.value = oxygen;
 
         // o2 constantly depletes during game
-        oxygen -= 0.5f * Time.deltaTime;
+        oxygen -= 1f * Time.deltaTime;
 
         if (oxygen <= 0 && health.currentHealth > 0) {
             health.damagePlayer(100, new Vector3(0f,0f,0f));

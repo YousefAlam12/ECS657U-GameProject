@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.118899934, g: 0.31090936, b: 0.3529911, a: 1}
+  m_IndirectSpecularColor: {r: 0.097627655, g: 0.26204875, b: 0.30240414, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -625,6 +625,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 310.54163
@@ -930,6 +934,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 289.3147
@@ -2440,6 +2448,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 213.10605
@@ -3269,6 +3281,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 93.45424
@@ -3792,6 +3808,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 213.10605
@@ -4962,6 +4982,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 313.28165
@@ -8020,6 +8044,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 214.25165
@@ -9077,6 +9105,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 307.80032
@@ -9139,13 +9171,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -49.49341
       objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.880814
+      value: 11.42
       objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12637,6 +12673,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 38.409744
@@ -14293,6 +14333,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 278.8809
@@ -16138,6 +16182,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680438163}
     m_Modifications:
+    - target: {fileID: 5772989157218559682, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+      propertyPath: oxygenAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7751813503824024377, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 312.84122

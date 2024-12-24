@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     // data to save the state of the game
     public int currentLvl;
     public bool isEasy;
+    public bool isHard;
     public float sensitivity;
     public int secretTreasure;
 
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
 
         // Varibales to hold current state of game
         isEasy = MainMenuManager.isEasy();
+        isHard = MainMenuManager.isHard();
         sensitivity = OptionsManager.GetSensitivity();
         secretTreasure = PlayerInventory.SecretTreasure;
 
@@ -119,15 +121,17 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame() 
     {
-        // respawn on current level when easy mode
-        if(MainMenuManager.isEasy())
+        // respawn on current level on easy/standard mode
+        if(!MainMenuManager.isHard())
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }
-
-        // Restart game from level 1
-        SceneManager.LoadScene("Level1");
+        // Restart game from level 1 on hard mode
+        else 
+        {
+            SceneManager.LoadScene("Level1");
+        }
     }
 
     public void MainMenu() 
