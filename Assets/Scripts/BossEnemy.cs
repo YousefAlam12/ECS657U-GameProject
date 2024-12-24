@@ -1,16 +1,17 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class BossEnemy : MonoBehaviour
 {
-    public Transform player;             // Reference to the player
+    public Transform player;             
     public NavMeshAgent agent;           // NavMeshAgent for chasing and patrolling
-    public float aggroRange = 10f;       // Distance within which the boss starts chasing
-    public float jumpRange = 3f;         // Distance within which the boss performs the jump
+    public float aggroRange = 10f;       // Distance which the boss starts chasing
+    public float jumpRange = 3f;         // Distance which the boss performs the jump
     public float jumpHeight = 2f;        // How high the boss jumps
     public float jumpCooldown = 3f;      // Time between slam sequences
-    public GameObject shockwavePrefab;   // Prefab for the shockwave
+    public GameObject shockwavePrefab;
     public float upwardDuration = 1f;    // Time to reach the peak of the jump
     public float downwardDuration = 0.5f; // Time to return to the ground
 
@@ -22,19 +23,27 @@ public class BossEnemy : MonoBehaviour
     public int slamCount = 3;            // Number of slams in a sequence
     public float slamDecrement = 0.3f;
 
-    private bool isJumping = false;      // Is the boss currently performing a jump?
-    private bool isPatrolling = false;   // Is the boss currently patrolling?
+    private bool isJumping = false;      
+    private bool isPatrolling = false;   
+    private bool encounterStarted = false;
+
+    public GameObject bossHealthBar;
 
     void Start()
     {
-        // Ensure the agent doesn't automatically adjust its Y position
         agent.updateUpAxis = false;
 
         // Set the initial speed to normal speed
         agent.speed = normalSpeed;
 
-        // Start patrolling
-        StartCoroutine(Patrol());
+        // Hide the health bar initially
+        if (bossHealthBar != null)
+        {
+            bossHealthBar.SetActive(false);
+        }
+
+        // Stop the agent from moving initially
+        agent.isStopped = true;
     }
 
     void Update()
@@ -47,28 +56,51 @@ public class BossEnemy : MonoBehaviour
             return;
         }
 
-        if (distanceToPlayer <= jumpRange)
+        if (!encounterStarted && distanceToPlayer <= aggroRange)
         {
-            // Player is in range to perform the jump sequence
-            StopPatrolling();
-            StartCoroutine(SlamSequence());
+            // Start the encounter when the player enters the aggro range
+            StartEncounter();
         }
-        else if (distanceToPlayer <= aggroRange)
+
+        if (encounterStarted)
         {
-            // Chase the player if within aggro range
-            StopPatrolling();
-            SetChaseSpeed();
-            ChasePlayer();
-        }
-        else
-        {
-            // Start patrolling if the player is out of range
-            SetNormalSpeed();
-            if (!isPatrolling)
+            if (distanceToPlayer <= jumpRange)
             {
-                StartCoroutine(Patrol());
+                // Player is in range to perform the jump sequence
+                StopPatrolling();
+                StartCoroutine(SlamSequence());
+            }
+            else if (distanceToPlayer <= aggroRange)
+            {
+                // Chase the player if within aggro range
+                StopPatrolling();
+                SetChaseSpeed();
+                ChasePlayer();
+            }
+            else
+            {
+                // Start patrolling if the player is out of range
+                SetNormalSpeed();
+                if (!isPatrolling)
+                {
+                    StartCoroutine(Patrol());
+                }
             }
         }
+    }
+
+    private void StartEncounter()
+    {
+        encounterStarted = true;
+
+        if (bossHealthBar != null)
+        {
+            bossHealthBar.SetActive(true);
+        }
+
+        // Allow the boss to start moving
+        agent.isStopped = false;
+        Debug.Log("Boss encounter started!");
     }
 
     private void ChasePlayer()
@@ -106,16 +138,11 @@ public class BossEnemy : MonoBehaviour
             currentUpwardDuration = Mathf.Max(0.2f, currentUpwardDuration - slamDecrement); // Ensure upward duration doesn't go below 0.2 seconds
             currentDownwardDuration = Mathf.Max(0.1f, currentDownwardDuration - slamDecrement); // Ensure downward duration doesn't go below 0.1 seconds
 
-            // Optional: Add a brief delay between slams
             yield return new WaitForSeconds(0.5f);
         }
 
-        // Resume the agent after the slam sequence
         agent.isStopped = false;
-
-        // Wait for the cooldown before the next sequence
         yield return new WaitForSeconds(jumpCooldown);
-
         isJumping = false;
     }
 
@@ -125,7 +152,7 @@ public class BossEnemy : MonoBehaviour
         Vector3 startPosition = transform.position;
         Vector3 jumpTarget = startPosition + Vector3.up * jumpHeight;
 
-        // Smoothly move upwards
+        // Move up
         float elapsedTime = 0f;
         while (elapsedTime < currentUpwardDuration)
         {
@@ -134,10 +161,7 @@ public class BossEnemy : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the boss reaches the peak
         transform.position = jumpTarget;
-
-        // Smoothly move downwards
         elapsedTime = 0f;
         while (elapsedTime < currentDownwardDuration)
         {
@@ -146,22 +170,20 @@ public class BossEnemy : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the boss returns to the ground
+        // Boss returns to the ground
         transform.position = startPosition;
 
         // Trigger the shockwave at the base of the boss
         if (shockwavePrefab != null)
         {
-            // Calculate the position for the shockwave at the base of the boss
+            // Calculate the position for the shockwave
             Vector3 shockwavePosition = transform.position + Vector3.down * (transform.localScale.y / 2f);
             GameObject shockwave = Instantiate(shockwavePrefab, shockwavePosition, Quaternion.identity);
 
-            // Set the shockwave scale to not expand on the Y-axis
             Vector3 shockwaveScale = shockwave.transform.localScale;
             shockwave.transform.localScale = new Vector3(shockwaveScale.x, 1f, shockwaveScale.z); // Set Y scale to 1
         }
     }
-
 
     private IEnumerator Patrol()
     {
@@ -169,23 +191,20 @@ public class BossEnemy : MonoBehaviour
 
         while (true)
         {
-            // Choose a random point within the patrol radius
+            // Choose a random point within the patrol radius to move to
             Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
             randomDirection += transform.position;
 
             NavMeshHit hit;
             if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, NavMesh.AllAreas))
             {
-                // Move to the random point
                 agent.SetDestination(hit.position);
 
-                // Wait until the agent reaches the destination
                 while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance)
                 {
                     yield return null;
                 }
 
-                // Wait for some time at the patrol point
                 yield return new WaitForSeconds(patrolWaitTime);
             }
         }
