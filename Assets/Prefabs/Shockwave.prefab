@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8712620080309923006}
   - component: {fileID: 4343618199127801543}
   - component: {fileID: 2718840254312411611}
-  - component: {fileID: 8556121407657969715}
   - component: {fileID: 7730172443284820179}
+  - component: {fileID: 8556121407657969715}
   - component: {fileID: -8905028618531656924}
   m_Layer: 0
   m_Name: Shockwave
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8556121407657969715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8583794855188187768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5599d371f2c88f0459841b3a1fe0654f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expansionSpeed: 120
-  maxScale: 90
 --- !u!64 &7730172443284820179
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -122,6 +108,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8556121407657969715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8583794855188187768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5599d371f2c88f0459841b3a1fe0654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expansionSpeed: 120
+  maxScale: 90
 --- !u!114 &-8905028618531656924
 MonoBehaviour:
   m_ObjectHideFlags: 0
