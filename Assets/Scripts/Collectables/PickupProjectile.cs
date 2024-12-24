@@ -8,6 +8,7 @@ public class PickupProjectile : MonoBehaviour
     private float throwTimeout = 5f; // Time reset the state
     private float throwTimer;
     public float threshold = -20;
+    public int damageAmount = 1;
 
     public void SetThrownState(bool state)
     {
@@ -43,8 +44,15 @@ public class PickupProjectile : MonoBehaviour
         if (isThrown && collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Thrown pickup hit an enemy!");
-            Destroy(collision.gameObject); // Destroy the enemy
-            Destroy(gameObject); // Destroy the pickup object
+            EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                // Deal damage to the enemy
+                enemyHealth.TakeDamage(damageAmount);
+            }
+
+            // Destroy the pickup object after hitting the enemy
+            Destroy(gameObject);
         }
         else
         {

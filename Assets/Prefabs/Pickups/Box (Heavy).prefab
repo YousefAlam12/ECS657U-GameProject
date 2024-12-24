@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: -20
+  damageAmount: 5
 --- !u!54 &2073439661627598462
 Rigidbody:
   m_ObjectHideFlags: 0
