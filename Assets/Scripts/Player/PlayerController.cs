@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
     // pause switch
     private bool isPaused;
 
+    public GameObject playerModel;
+
     void Start()
     {
         // using rigid body
@@ -157,7 +159,7 @@ public class PlayerController : MonoBehaviour
 
                 // resets rb constraints in order to add force to object
                 pickingUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-                pickingUp.GetComponent<Rigidbody>().AddForce(transform.forward * 50000f, ForceMode.Impulse);
+                pickingUp.GetComponent<Rigidbody>().AddForce(playerModel.transform.forward * 50000f, ForceMode.Impulse);
 
                 // Set the thrown state to true
                 pickingUp.GetComponent<PickupProjectile>().SetThrownState(true);
@@ -252,9 +254,20 @@ public class PlayerController : MonoBehaviour
                     // only lose O2 when actually moving
                     if (moveInput.x != 0 || moveDirection.z != 0)
                     {
+                        // easy mode results in less o2 being drained
+                        if (MainMenuManager.isEasy())
+                        {
+                            o2Bar.oxygen -= 5f * Time.deltaTime;
+                        }
                         // Hard mode results in more o2 being drained
-                        // o2Bar.oxygen -= 10f * Time.deltaTime;
-                        o2Bar.oxygen -= 5f * Time.deltaTime;
+                        else if (MainMenuManager.isHard())
+                        {
+                            o2Bar.oxygen -= 15f * Time.deltaTime;
+                        }
+                        else 
+                        {
+                            o2Bar.oxygen -= 10f * Time.deltaTime;
+                        }
                     }
                 }
                 else {
@@ -272,6 +285,14 @@ public class PlayerController : MonoBehaviour
 
         // prevents movement from scaling off of frame rate
         controller.Move(moveDirection * Time.deltaTime);
+
+        // move player based on direction in which the camera is looking
+        if (moveInput.x != 0 || moveInput.y != 0)
+        {
+            // transform.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y, 0f);
+            Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
+            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, 15f * Time.deltaTime);
+        }
     }
 
     // checks collisions for different types of environment objects
@@ -329,7 +350,8 @@ public class PlayerController : MonoBehaviour
     // sets the pickup obj to follow the players movement
     void Pickup(GameObject obj) {
         // obj.transform.position = new Vector3(camera.pivot.position.x, 5f, camera.pivot.position.z+0.4f);
-        obj.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3.2f, camera.pivot.position.z);
+        // obj.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3.2f, camera.pivot.position.z);
+        obj.transform.position = new Vector3(transform.position.x, transform.position.y+3.2f, transform.position.z);
         // obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
         obj.transform.parent = transform;
         canDrop = true;
@@ -372,7 +394,6 @@ public class PlayerController : MonoBehaviour
         // Update Animator with movement intensity
         float movementIntensity = new Vector3(moveDirection.x, 0, moveDirection.z).magnitude / sprintSpeed; // Normalised movement intensity
         playerAnimator.SetFloat("Speed", movementIntensity);
-        // playerAnimator.SetFloat("Speed", moveSpeed);
         playerAnimator.SetBool("isGrounded", controller.isGrounded);
     }
 

@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         inventory = FindAnyObjectByType<PlayerInventory>();
-        firePoint = GameObject.Find("Player").transform.GetChild(0);
+        firePoint = GameObject.Find("Player").GetComponent<PlayerController>().playerModel.transform.GetChild(0);
         // icon = GameObject.FindGameObjectWithTag("Icon").GetComponent<Image>();
         // inventory.icon = icon;
         // icon.gameObject.SetActive(false); 

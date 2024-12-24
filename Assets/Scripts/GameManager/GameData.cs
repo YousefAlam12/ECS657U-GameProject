@@ -8,6 +8,7 @@ public class GameData
 {
     public int level;
     public bool isEasy;
+    public bool isHard;
     public float sensitivity;
     public int secretTreasure;
 
@@ -15,6 +16,7 @@ public class GameData
     {
         level = game.currentLvl;
         isEasy = game.isEasy;
+        isHard = game.isHard;
         sensitivity = game.sensitivity;
         secretTreasure = game.secretTreasure;
     }
