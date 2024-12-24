@@ -29,6 +29,9 @@ public class BossEnemy : MonoBehaviour
 
     public GameObject bossHealthBar;
 
+    public float shockwaveHeight = 2f;
+    public float shockwaveWidth = 0.4f;
+
     void Start()
     {
         agent.updateUpAxis = false;
@@ -177,11 +180,11 @@ public class BossEnemy : MonoBehaviour
         if (shockwavePrefab != null)
         {
             // Calculate the position for the shockwave
-            Vector3 shockwavePosition = transform.position + Vector3.down * (transform.localScale.y / 2f);
+            Vector3 shockwavePosition = transform.position + Vector3.down * shockwaveHeight;
             GameObject shockwave = Instantiate(shockwavePrefab, shockwavePosition, Quaternion.identity);
 
             Vector3 shockwaveScale = shockwave.transform.localScale;
-            shockwave.transform.localScale = new Vector3(shockwaveScale.x, 1f, shockwaveScale.z); // Set Y scale to 1
+            shockwave.transform.localScale = new Vector3(shockwaveScale.x, shockwaveWidth, shockwaveScale.z); // Set Y scale to 1
         }
     }
 
