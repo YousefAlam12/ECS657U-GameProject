@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if(isWallJump) {
-            moveDirection.y = 0;
+            moveDirection.y = 1;
             if(value.isPressed)
             {
                 Knockback(new Vector3((moveDirection.x/2)*-1, 2f, (moveDirection.z/2)*-1));
