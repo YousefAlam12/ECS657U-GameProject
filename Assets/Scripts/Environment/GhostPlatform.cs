@@ -1,10 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+
 public class GhostPlatform : MonoBehaviour
 {
     [SerializeField] string playerTag = "Player"; // Used to define the player entity
-    [SerializeField] string ghostPlatformTag = "GhostPlatform"; // Tag for platforms
     [SerializeField] float disappearTime = 3; // Time before the platform disappears
     Animator myAnim; // Animator controlling the platform animation
 
@@ -17,16 +17,17 @@ public class GhostPlatform : MonoBehaviour
         myAnim.SetFloat("DisappearTime", 1 / disappearTime);
     }
 
-    // on collision, check if the player or the platform tag is the trigger
+    // on collision sets the platform to fade
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag(playerTag) || collision.collider.CompareTag(ghostPlatformTag))
+        if (collision.collider.CompareTag(playerTag))
         {
             myAnim.SetBool("Trigger", true);
         }
     }
 
-    // restores the platform after disappearing if set
+
+    // restores the platform after dissapearing if set
     public void TriggerReset()
     {
         if (canReset)

@@ -12,7 +12,6 @@ TagManager:
   - Dash-Icon
   - Shoot-Icon
   - Icon
-  - GhostPlatform
   layers:
   - Default
   - TransparentFX

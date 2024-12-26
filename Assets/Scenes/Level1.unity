@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
-  m_FogColor: {r: 0.11454253, g: 0.19609857, b: 0.254717, a: 1}
-  m_FogMode: 1
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
-  m_LinearFogEnd: 700
+  m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.097627655, g: 0.26204875, b: 0.30240414, a: 1}
+  m_IndirectSpecularColor: {r: 0.118899934, g: 0.31090936, b: 0.3529911, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6453,7 +6453,7 @@ PrefabInstance:
       objectReference: {fileID: 1287603084}
     - target: {fileID: 5569459822685788820, guid: 4b1bbb1922f9e794d9bda7a6e1cc0ae5, type: 3}
       propertyPath: walkSpeed
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5569459822685788820, guid: 4b1bbb1922f9e794d9bda7a6e1cc0ae5, type: 3}
       propertyPath: sprintSpeed
