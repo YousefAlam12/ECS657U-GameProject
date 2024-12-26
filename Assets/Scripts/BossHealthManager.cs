@@ -7,6 +7,9 @@ public class BossHealthManager : MonoBehaviour
     public EnemyHealth enemyHealth; // Reference to the EnemyHealth script
     public BossHealth healthBar; // Reference to the BossHealthBar script
 
+    // to be spawned once boss is beat
+    public GameObject treasure;
+
     void Start()
     {
         if (enemyHealth != null && healthBar != null)
@@ -26,6 +29,12 @@ public class BossHealthManager : MonoBehaviour
         else
         {
             healthBar.SetHealth(0);
+        }
+
+        // spawn treasure once boss dies
+        if (healthBar.healthSlider.value <= 0)
+        {
+            Instantiate(treasure, new Vector3(-89.83105f, 15.01f, 85.44401f), Quaternion.Euler(0, 90.071f, 0));
         }
     }
 }

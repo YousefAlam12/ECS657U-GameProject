@@ -1784,8 +1784,6 @@ MonoBehaviour:
   bossHealthBar: {fileID: 343743757}
   shockwaveHeight: 5
   shockwaveWidth: 1
-  whaleModel: {fileID: 0}
-  treasure: {fileID: 4580932746857970026, guid: 8e1dca2ca13dd0f40a7367ceb48de80f, type: 3}
 --- !u!195 &336398648
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3451,6 +3449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 25
   currentHealth: 0
+  enemyAgent: {fileID: 0}
 --- !u!1 &611918821
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,6 +6488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 609416116}
   healthBar: {fileID: 343743758}
+  treasure: {fileID: 4580932746857970026, guid: 8e1dca2ca13dd0f40a7367ceb48de80f, type: 3}
 --- !u!1 &1576356205
 GameObject:
   m_ObjectHideFlags: 0
