@@ -6,10 +6,12 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 3; // Set a default maximum health value
     public int currentHealth;
+    public GameObject enemyAgent;
 
     void Start()
     {
         currentHealth = maxHealth; // Initialize current health
+        enemyAgent = transform.parent.gameObject;
     }
 
     // Call this method to reduce health
@@ -33,6 +35,9 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log(gameObject.name + " has died!");
-        Destroy(gameObject); // Destroy the enemy object
+        
+        // Destroy the enemy object
+        Destroy(enemyAgent);
+        Destroy(gameObject);
     }
 }
