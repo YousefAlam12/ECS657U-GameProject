@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7790200621751542936}
   m_Layer: 0
   m_Name: GhostPlatform
-  m_TagString: Untagged
+  m_TagString: GhostPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 156.032, y: 38, z: -69.026}
-  m_LocalScale: {x: 26.882835, y: 26.882835, z: 26.882835}
+  m_LocalScale: {x: 18.105566, y: 26.882835, z: 35.090168}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,7 +119,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 147257d20800d7d43ac4839959cb5ec8, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -142,6 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  disappearTime: 5
+  disappearTime: 4
   canReset: 1
   resetTime: 5

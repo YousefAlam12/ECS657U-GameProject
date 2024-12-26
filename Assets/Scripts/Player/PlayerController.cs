@@ -254,13 +254,8 @@ public class PlayerController : MonoBehaviour
                     // only lose O2 when actually moving
                     if (moveInput.x != 0 || moveDirection.z != 0)
                     {
-                        // easy mode results in less o2 being drained
-                        if (MainMenuManager.isEasy())
-                        {
-                            o2Bar.oxygen -= 5f * Time.deltaTime;
-                        }
                         // Hard mode results in more o2 being drained
-                        else if (MainMenuManager.isHard())
+                        if (MainMenuManager.isHard())
                         {
                             o2Bar.oxygen -= 15f * Time.deltaTime;
                         }

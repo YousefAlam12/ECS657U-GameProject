@@ -23,5 +23,9 @@ public class BossHealthManager : MonoBehaviour
             // Update the health bar with the enemy's current health
             healthBar.SetHealth(enemyHealth.currentHealth);
         }
+        else
+        {
+            healthBar.SetHealth(0);
+        }
     }
 }

@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public Vector3 respawnPoint;
     public GameObject player;
 
+    // win screen text
+    public TextMeshProUGUI winTitle;
+    public TextMeshProUGUI winText;
+
     // data to save the state of the game
     public int currentLvl;
     public bool isEasy;
@@ -69,7 +73,6 @@ public class GameManager : MonoBehaviour
 
 
         // Transisitons to lvl2 once the treasure is obtained from lvl1
-        // if (playerInventory.NumberOfTreasure == 2 && SceneManager.GetActiveScene().name != "Level2") {
         if (playerInventory.NumberOfTreasure == playerInventory.totalTreasure && currentLvl == 1) {
             SceneManager.LoadScene("Level2");
         }
@@ -77,21 +80,28 @@ public class GameManager : MonoBehaviour
         // lvl2 transitions to lvl3 when treasure is obtained 
         if (playerInventory.NumberOfTreasure == playerInventory.totalTreasure && currentLvl == 2)
         {
-            // SceneManager.LoadScene("MainMenuScreen");
             SceneManager.LoadScene("Level3");
         }
 
+        // lvl3 transitions to secretLvl when all secret treasures are obtained, otherwise finish game
         if (playerInventory.NumberOfTreasure == playerInventory.totalTreasure && currentLvl == 3)
         {
-            if (secretTreasure == 3)
+            if (PlayerInventory.SecretTreasure == 3)
             {
-                SceneManager.LoadScene("OptionsMenu");
+                SceneManager.LoadScene("Level4");
             }
             else
             {
-                SceneManager.LoadScene("MainMenuScreen");
+                // SceneManager.LoadScene("MainMenuScreen");
+                GameWin();
             }
-            // SceneManager.LoadScene("Level3");
+        }
+
+        // secret lvl transitions to game finish 
+        if (playerInventory.NumberOfTreasure == playerInventory.totalTreasure && currentLvl == 4)
+        {
+            GameWin();
+            // SceneManager.LoadScene("MainMenuScreen");
         }
     }
 
@@ -102,12 +112,19 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         Time.timeScale = 0f; // Pause the game
 
+        // hide the win text on the final levels when they are set
+        if (winTitle && winText)
+        {    
+            winTitle.gameObject.SetActive(false);
+            winText.gameObject.SetActive(false);
+        }
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         mainCamera.GetComponent<CameraController>().enabled = false;
 
-        // when game is standard mode ensure that player is not able to load back to the level they died on and start again
-        if (!isEasy)
+        // when game is hard mode ensure that player is not able to load back to the level they died on and start again
+        if (isHard)
         {
             currentLvl = 1;
             SaveSystem.SaveGame(this);
@@ -163,6 +180,13 @@ public class GameManager : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
             restartButton.gameObject.SetActive(false);
+
+            // hide the win text on the final levels when they are set
+            if (winTitle && winText)
+            {    
+                winTitle.gameObject.SetActive(false);
+                winText.gameObject.SetActive(false);
+            }
             Time.timeScale = 0f; // Pause the game
 
             Cursor.lockState = CursorLockMode.None;
@@ -178,5 +202,20 @@ public class GameManager : MonoBehaviour
             Cursor.visible = false;
             mainCamera.GetComponent<CameraController>().enabled = true;
         }
+    }
+
+    // win screen
+    void GameWin() 
+    {
+        // Display Game Over panel
+        gameOverPanel.SetActive(true);
+        restartButton.gameObject.SetActive(false);
+        winTitle.gameObject.SetActive(true);
+        winText.gameObject.SetActive(true);
+        Time.timeScale = 0f; // Pause the game
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        mainCamera.GetComponent<CameraController>().enabled = false;
     }
 }

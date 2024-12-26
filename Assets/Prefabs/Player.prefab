@@ -145,7 +145,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.6
-  m_Height: 2
+  m_Height: 2.15
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5569459822685788820
@@ -178,7 +178,6 @@ MonoBehaviour:
   dashPower: 30
   dashCooldown: 0.5
   playerAnimator: {fileID: 3410407276597339716}
-  pivot: {fileID: 0}
   playerModel: {fileID: 8286569581287335556}
 --- !u!143 &6832602875451837624
 CharacterController:

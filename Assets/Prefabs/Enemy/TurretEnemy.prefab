@@ -100,7 +100,7 @@ MonoBehaviour:
   enemyProjectile: {fileID: 7769009841015371924, guid: 0fbb21d1cbe4e624d84519a7ef154a01, type: 3}
   spawnPoint: {fileID: 6204135687951473099}
   projectileSpeed: 40
-  reloadTime: 2
+  reloadTime: 3
 --- !u!114 &3578084779336248621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2e0835d539b4f44bb7e9628a7f92e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 0
+  maxHealth: 1
+  currentHealth: 1
 --- !u!1 &6693513263539443746
 GameObject:
   m_ObjectHideFlags: 0
