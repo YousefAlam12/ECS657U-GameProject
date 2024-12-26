@@ -10786,7 +10786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1192675011}
   oxygen: 0
-  maxOxygen: 150
+  maxOxygen: 200
   health: {fileID: 0}
 --- !u!114 &1192675011
 MonoBehaviour:
@@ -19664,6 +19664,8 @@ MonoBehaviour:
   gameOverText: {fileID: 927295562}
   respawnPoint: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  winTitle: {fileID: 0}
+  winText: {fileID: 0}
   currentLvl: 2
   isEasy: 0
   isHard: 0
