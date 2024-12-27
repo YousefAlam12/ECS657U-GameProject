@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 588742865}
   agent: {fileID: 336398648}
-  aggroRange: 40
+  aggroRange: 85
   jumpRange: 20
   jumpHeight: 10
   jumpCooldown: 3

@@ -10,6 +10,9 @@ public class BossHealthManager : MonoBehaviour
     // to be spawned once boss is beat
     public GameObject treasure;
 
+    // Flag to ensure treasure is spawned only once
+    private bool treasureSpawned = false;
+
     void Start()
     {
         if (enemyHealth != null && healthBar != null)
@@ -32,9 +35,10 @@ public class BossHealthManager : MonoBehaviour
         }
 
         // spawn treasure once boss dies
-        if (healthBar.healthSlider.value <= 0)
+        if (healthBar.healthSlider.value <= 0 && !treasureSpawned)
         {
             Instantiate(treasure, new Vector3(-89.83105f, 15.01f, 85.44401f), Quaternion.Euler(0, 90.071f, 0));
+            treasureSpawned = true;
         }
     }
 }
