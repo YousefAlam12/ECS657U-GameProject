@@ -18,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Level1");
+        PlayerInventory.SecretTreasure = 0;
     }
 
     public void OpenControls()

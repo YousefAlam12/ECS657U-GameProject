@@ -60,6 +60,10 @@ public class GameManager : MonoBehaviour
 
     void Update() 
     {
+        // ///////////////
+        Debug.Log(PlayerInventory.SecretTreasure);
+        // ///////////////
+
         if (healthManager.currentHealth <= 0) {
             GameOver();
         }
@@ -93,7 +97,9 @@ public class GameManager : MonoBehaviour
             else
             {
                 // SceneManager.LoadScene("MainMenuScreen");
+                // show win screen and reset secret treasure count
                 GameWin();
+                PlayerInventory.SecretTreasure = 0;
             }
         }
 
@@ -101,6 +107,7 @@ public class GameManager : MonoBehaviour
         if (playerInventory.NumberOfTreasure == playerInventory.totalTreasure && currentLvl == 4)
         {
             GameWin();
+            PlayerInventory.SecretTreasure = 0;
             // SceneManager.LoadScene("MainMenuScreen");
         }
     }
@@ -138,6 +145,9 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame() 
     {
+        // ensures players secret treasure is set to what it was at the start of the lvl
+        PlayerInventory.SecretTreasure = secretTreasure;
+        
         // respawn on current level on easy/standard mode
         if(!MainMenuManager.isHard())
         {
@@ -151,12 +161,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Goes to main menu
     public void MainMenu() 
     {
-        // Restart game from level 1
         SceneManager.LoadScene("MainMenuScreen");
     }
 
+    // respawns player back to original spawn point when treasure is collected
     void RespawnPlayer()
     {
         if (player != null && respawnPoint != null)
