@@ -19,6 +19,7 @@ public class SpinningObstacle : MonoBehaviour
 
     void Update()
     {
+        // Set rotation direction based on the selected axis
         Vector3 rotationVector = Vector3.zero;
 
         switch (rotationAxis)
@@ -34,9 +35,11 @@ public class SpinningObstacle : MonoBehaviour
                 break;
         }
 
+         // Rotate the obstacle
         transform.Rotate(rotationVector, rotationSpeed * Time.deltaTime);
     }
 
+    // Apply knockback to player on collision
     void OnCollisionEnter(Collision collision)
     {
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();

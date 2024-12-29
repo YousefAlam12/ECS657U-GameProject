@@ -32,12 +32,6 @@ public class BossEnemy : MonoBehaviour
     public float shockwaveHeight = 2f;
     public float shockwaveWidth = 0.4f;
 
-    // enemy health script
-    // public GameObject whaleModel;
-    
-    // to be spawned once boss is beat
-    // public GameObject treasure;
-
     void Start()
     {
         agent.updateUpAxis = false;
@@ -97,13 +91,6 @@ public class BossEnemy : MonoBehaviour
                 }
             }
         }
-
-        // if (whaleModel == null || whaleModel.GetComponent<EnemyHealth>().currentHealth <= 0)
-        // {
-        //     // Instantiate(treasure, new Vector3(-89.83105f, 15.01f, 85.44401f), Quaternion.identity);
-        //     // Instantiate(treasure, new Vector3(-89.83105f, 15.01f, 85.44401f), Quaternion.Euler(0, 90.071f, 0));
-        //     Destroy(gameObject);
-        // }
     }
 
     private void StartEncounter()

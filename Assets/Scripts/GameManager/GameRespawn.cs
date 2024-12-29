@@ -20,15 +20,14 @@ public class GameRespawn : MonoBehaviour
     {
         if (transform.position.y < threshold)
         {
-            // Debug.Log("Player fell below threshold! Respawning at: " + respawnPoint);
             transform.position = respawnPoint;
             health.damagePlayer(2, new Vector3(0f,0f,0f));
         }
     }
 
+    // Changes the respawn point to a new one
     public void UpdateRespawnPoint(Vector3 newRespawnPoint)
     {
         respawnPoint = newRespawnPoint;
-        // Debug.Log("Respawn point updated to: " + respawnPoint);
     }
 }

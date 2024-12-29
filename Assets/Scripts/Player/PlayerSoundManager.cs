@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using  UnityEngine.Audio;
 
+// Sounds applied for given player actions
 public class PlayerSoundManager : MonoBehaviour
 {
     public AudioSource audioSource;

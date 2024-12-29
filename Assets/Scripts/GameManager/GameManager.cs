@@ -60,14 +60,12 @@ public class GameManager : MonoBehaviour
 
     void Update() 
     {
-        // /////////////////
-        Debug.Log(PlayerInventory.SecretTreasure);
-        // /////////////////
-
+        // Game over when all health is gone
         if (healthManager.currentHealth <= 0) {
             GameOver();
         }
 
+        // Reset to original spawn when a treasure is collected
         if (playerInventory.NumberOfTreasure == 1 && !hasRespawned)
         {
             RespawnPlayer();
@@ -117,6 +115,7 @@ public class GameManager : MonoBehaviour
         // Display Game Over panel
         gameOverPanel.SetActive(true);
         gameOverText.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
         Time.timeScale = 0f; // Pause the game
 
         // hide the win text on the final levels when they are set

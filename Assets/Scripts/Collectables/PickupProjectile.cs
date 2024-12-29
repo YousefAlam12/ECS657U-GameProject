@@ -43,7 +43,6 @@ public class PickupProjectile : MonoBehaviour
         // Check if the thrown pickup hits an enemy
         if (isThrown && collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Thrown pickup hit an enemy!");
             EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
@@ -64,6 +63,5 @@ public class PickupProjectile : MonoBehaviour
     private void ResetThrownState()
     {
         isThrown = false;
-        //Debug.Log("Thrown state reset.");
     }
 }

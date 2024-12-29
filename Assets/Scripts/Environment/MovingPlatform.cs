@@ -37,8 +37,10 @@ public class MovingPlatform : MonoBehaviour
         StartCoroutine(MovePlatform());
     }
 
+    // moves the platform back and forth between point A and point B
     IEnumerator MovePlatform()
     {
+        // loop to continuously move the platform between the two points
         while (true)
         {
             while ((targetPosition - platform.transform.position).sqrMagnitude > 0.01f)
@@ -47,6 +49,7 @@ public class MovingPlatform : MonoBehaviour
                 yield return null;
             }
 
+            // after reaching the target position, set the new target to the opposite point with a delay
             targetPosition = targetPosition == pointA.transform.position ? pointB.transform.position : pointA.transform.position;
             yield return new WaitForSeconds(delay);
         }

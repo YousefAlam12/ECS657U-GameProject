@@ -12,6 +12,7 @@ public class GameData
     public float sensitivity;
     public int secretTreasure;
 
+    // Saves the game to allow it to be loaded by the player
     public GameData (GameManager game)
     {
         level = game.currentLvl;

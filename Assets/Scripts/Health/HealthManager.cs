@@ -54,12 +54,4 @@ public class HealthManager : MonoBehaviour
             inventory.icon.gameObject.SetActive(false);
         }
     }
-
-    void Update() {
-        // Testing
-        // if(Input.GetKeyDown(KeyCode.L)) {
-        //     damagePlayer(1);
-        // }
-    }
-
 }

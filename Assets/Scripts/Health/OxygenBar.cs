@@ -10,6 +10,7 @@ public class OxygenBar : MonoBehaviour
     public float maxOxygen = 200f;
     public HealthManager health;
 
+    // Sets the o2 bar in the UI to the max o2
     void Start()
     {
         if (MainMenuManager.isEasy())
@@ -21,6 +22,7 @@ public class OxygenBar : MonoBehaviour
         health = FindAnyObjectByType<HealthManager>();
     }
 
+    // Depletes the o2 bar and kills player if it drops to 0
     void Update()
     {
         slider.value = oxygen;
@@ -28,6 +30,7 @@ public class OxygenBar : MonoBehaviour
         // o2 constantly depletes during game
         oxygen -= 1f * Time.deltaTime;
 
+        // kills player when o2 bar is 0
         if (oxygen <= 0 && health.currentHealth > 0) {
             health.damagePlayer(100, new Vector3(0f,0f,0f));
         }

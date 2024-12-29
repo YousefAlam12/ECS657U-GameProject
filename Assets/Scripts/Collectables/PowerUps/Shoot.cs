@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Shoot : MonoBehaviour
 {
     private PlayerInventory inventory;
-    // public Image icon;
     public Sprite powerIcon;
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform firePoint;
@@ -17,10 +16,8 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         inventory = FindAnyObjectByType<PlayerInventory>();
+        // setting the point of fire for the player
         firePoint = GameObject.Find("Player").GetComponent<PlayerController>().playerModel.transform.GetChild(0);
-        // icon = GameObject.FindGameObjectWithTag("Icon").GetComponent<Image>();
-        // inventory.icon = icon;
-        // icon.gameObject.SetActive(false); 
     }
 
     void OnTriggerEnter(Collider other)
@@ -47,8 +44,6 @@ public class Shoot : MonoBehaviour
         // Check if enough time has passed for the next shot
         if (Time.time >= nextShootTime)
         {
-            // Debug.Log("Shooting"); // Log to confirm shooting occurs
-
             GameObject projectileObj = Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation) as GameObject;
             Rigidbody projectileRig = projectileObj.GetComponent<Rigidbody>();
 

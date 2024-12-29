@@ -17,11 +17,13 @@ public class ConveyorBelt : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (player != null)
             {
+                // Set the player's force in the direction of the conveyor's movement
                 player.SetConveyorForce(conveyorDirection.normalized * conveyorSpeed);
             }
         }
     }
 
+    // stop following the conveyor force on exit
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag(playerTag))

@@ -14,6 +14,7 @@ public class NPC : MonoBehaviour
     private int currentLineIndex;
     private Coroutine textRevealCoroutine;
 
+    // Trigger interaction when the player enters collider
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -23,6 +24,7 @@ public class NPC : MonoBehaviour
         }
     }
 
+    // End interaction when the player exits the collider
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -32,6 +34,7 @@ public class NPC : MonoBehaviour
         }
     }
 
+    // Starts the dialogue displaying the text on screen
     void StartInteraction()
     {
         if (isInteracting || dialogueCanvasPrefab == null || dialogueLines.Length == 0) return;
@@ -43,6 +46,7 @@ public class NPC : MonoBehaviour
         ShowNextLine();
     }
 
+    // Shows the next line of dialogue
     void ShowNextLine()
     {
         if (currentLineIndex < dialogueLines.Length)
@@ -61,6 +65,7 @@ public class NPC : MonoBehaviour
         }
     }
 
+    // Reveals text one char at a time
     IEnumerator RevealText(string line)
     {
         dialogueText.text = "";
@@ -74,6 +79,7 @@ public class NPC : MonoBehaviour
         ShowNextLine();
     }
 
+    // Ends dialogue and removes the text from screen
     void EndInteraction()
     {
         if (dialogueCanvasInstance != null)

@@ -14,7 +14,6 @@ public class FlyingEnemyFollow : MonoBehaviour
     {
         // Ensure the agent doesn't automatically adjust its Y position
         flyingEnemy.updateUpAxis = false;
-        //flyingEnemy.updatePosition = false; // Disable automatic position updates
     }
 
     void Update()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPickup : MonoBehaviour
 {
-    public int healthAmount = 20; 
+    public int healthAmount = 1; 
     public bool enableRespawn = true; 
     public float respawnTime = 5f; 
 

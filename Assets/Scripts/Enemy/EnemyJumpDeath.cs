@@ -37,7 +37,7 @@ public class EnemyJumpDeath : MonoBehaviour
             {
                 enemyHealth.TakeDamage(damageToEnemy);
                 
-                // increase speed when on standard
+                // increase speed off enemy if game is not easy mode
                 if (!MainMenuManager.isEasy())
                 {
                     agent.speed += 2;
@@ -50,18 +50,12 @@ public class EnemyJumpDeath : MonoBehaviour
             if (enemyHealth.currentHealth > 0)
             {
                 // Bounce the player back
-                // PlayerController playerController = other.GetComponent<PlayerController>();
                 if (playerController != null)
                 {
                     Vector3 direction = (enemy.transform.position - other.transform.position).normalized;
                     pushBackDirection = direction * bounceForce;
                     isPushedBack = true;
                     pushBackTimer = pushBackDuration;
-
-                    // trigger a player bounceback
-                    // playerController.Bounce(1f);
-                    // Vector3 d = other.transform.position - enemy.transform.position;
-                    // playerController.Knockback(new Vector3(0.5f, 0.5f, 0.5f));
                 }
             }
 

@@ -6,10 +6,6 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    // PlayerInput playerInput;
-    // InputAction moveAction;
-    // private Rigidbody rb;
-
     // speed variables
     public float moveSpeed;
     public float sprintSpeed;
@@ -57,13 +53,11 @@ public class PlayerController : MonoBehaviour
     // pause switch
     private bool isPaused;
 
+    // model for player
     public GameObject playerModel;
 
     void Start()
     {
-        // using rigid body
-        // rb = GetComponent<Rigidbody>();
-
         // using CharacterController
         controller = GetComponent<CharacterController>();
         moveSpeed = walkSpeed;
@@ -171,16 +165,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // public void OnFire(InputValue value) {
-    //     if (value.isPressed && Time.time >= nextDashTime) {  // Check cooldown
-    //         if (moveInput != Vector2.zero) {
-    //             // Calculate dash direction based on current movement direction
-    //             dashDirection = (transform.forward * moveInput.y + transform.right * moveInput.x).normalized * dashPower;
-    //             nextDashTime = Time.time + dashCooldown;  // Update next dash time
-    //         }
-    //     }
-    // }
-
     // activates the players powerup ability
     public void OnFire(InputValue value)
     {
@@ -202,8 +186,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
     void MovePlayer()
     {       
         if(knockBackCounter <= 0 ) 
@@ -216,7 +198,7 @@ public class PlayerController : MonoBehaviour
             moveDirection = moveDirection.normalized * moveSpeed;
             moveDirection.y = yStore;
 
-            // Apply dash if active
+            // Apply dash if active (for Dash powerup)
             moveDirection += dashDirection;
 
             // Decay the dash direction over time
@@ -224,14 +206,7 @@ public class PlayerController : MonoBehaviour
 
             moveDirection += conveyorForce;
 
-
-            // // prevents grabbed object from going beneath the player
-            // if(grabable == pickingUp && pickingUp != null && pickingUp.transform.position.y < transform.position.y+1)
-            // {
-            //     pickingUp.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3, camera.pivot.position.z);
-            // }
-
-            // prevents you from being unable to do actions while touching another obj and stops unwanted movement
+            // prevents you from being unable to do actions while touching another obj and stops unwanted movement of obj
             if (pickingUp != null)
             {
                 grabable = pickingUp;
@@ -239,8 +214,6 @@ public class PlayerController : MonoBehaviour
                 float minY = transform.position.y + 1.2f;
                 float maxY = transform.position.y + 0.2f + objectHeight;
 
-                // float clampedY = Mathf.Min(pickingUp.transform.position.y, transform.position.y + objectHeight + 0.2f);
-                // float clampedY = Mathf.Min(pickingUp.transform.position.y, transform.position.y + 1.2f);
                 float clampedY = Mathf.Clamp(pickingUp.transform.position.y, minY, maxY);
 
                 pickingUp.transform.position = new Vector3(pickingUp.transform.position.x, clampedY, pickingUp.transform.position.z);
@@ -326,6 +299,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Knocks player in given direction
     public void Knockback(Vector3 direction) {
         knockBackCounter = knockBackTime;
         moveDirection = direction * knockBackForce;
@@ -336,6 +310,8 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection.y = force;
     }
+
+    // For swamp waters - slows down movement of the player
     private Vector3 conveyorForce = Vector3.zero;
     public void SetConveyorForce(Vector3 force)
     {
@@ -344,10 +320,7 @@ public class PlayerController : MonoBehaviour
 
     // sets the pickup obj to follow the players movement
     void Pickup(GameObject obj) {
-        // obj.transform.position = new Vector3(camera.pivot.position.x, 5f, camera.pivot.position.z+0.4f);
-        // obj.transform.position = new Vector3(camera.pivot.position.x, transform.position.y+3.2f, camera.pivot.position.z);
         obj.transform.position = new Vector3(transform.position.x, transform.position.y+3.2f, transform.position.z);
-        // obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
         obj.transform.parent = transform;
         canDrop = true;
     }

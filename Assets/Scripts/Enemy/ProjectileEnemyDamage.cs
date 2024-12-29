@@ -13,14 +13,11 @@ public class ProjectileEnemyDamage : MonoBehaviour
         if (other.collider.CompareTag("Player"))
         {
             if (hasDealtDamage) return;
-            //Debug.Log("Projectile hit the player");
 
             HealthManager playerHealth = FindAnyObjectByType<HealthManager>();
             if (playerHealth != null)
             {
                 playerHealth.damagePlayer(damageAmount, Vector3.zero);
-                // nextDamageTime = Time.time + damageCooldown; // Set the next time the enemy can deal damage
-                //Debug.Log("Damage applied to player");
                 hasDealtDamage = true; // Mark damage as dealt so projectile dosen't collide with target more than once
             }
 

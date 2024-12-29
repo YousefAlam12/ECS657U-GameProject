@@ -9,7 +9,6 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] List<GameObject> checkPoints;
 
     void Start() {
-        // player = FindAnyObjectByType<PlayerController>();
         player = GameObject.Find("Player");
     }
 

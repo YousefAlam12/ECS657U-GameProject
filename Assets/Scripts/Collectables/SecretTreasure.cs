@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SecretTreasure : MonoBehaviour
 {
-    // Adds treasure to player inventory and then dissapears
+    // Adds secret treasure to global var and then dissapears
     private void OnTriggerEnter(Collider other)
     {
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();

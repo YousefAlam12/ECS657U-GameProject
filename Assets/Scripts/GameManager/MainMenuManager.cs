@@ -69,6 +69,7 @@ public class MainMenuManager : MonoBehaviour
         return hardMode;
     }
 
+    // Uses the gamedata that was saved to load the game from the last lvl the player left off
     public void LoadGame()
     {
         GameData data = SaveSystem.LoadGame();

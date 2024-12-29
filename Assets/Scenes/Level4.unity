@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.097627655, g: 0.26204875, b: 0.30240414, a: 1}
+  m_IndirectSpecularColor: {r: 0.11890004, g: 0.31090894, b: 0.35299024, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -923,6 +923,10 @@ PrefabInstance:
     - target: {fileID: 5906184395512578390, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
+      propertyPath: shootCooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2894,6 +2898,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35be9def8712c44b9a1a0f8e59c0c79, type: 3}
+--- !u!1 &546619553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3395494327432943957, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
+  m_PrefabInstance: {fileID: 1974928448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &552952498
 GameObject:
   m_ObjectHideFlags: 0
@@ -6133,7 +6142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickups:
-  - {fileID: 3395494327432943957, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
+  - {fileID: 546619553}
   - {fileID: 6036480985727669258, guid: b72bed2c25a30dc4abaaacbd13aa845e, type: 3}
   amount: 6
   spawnArea: {x: 65, y: 0.5, z: 65}
@@ -8062,6 +8071,10 @@ PrefabInstance:
     - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
       propertyPath: firePoint
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112367073759460858, guid: 862307d6ba823a1439792786c9c3c53a, type: 3}
+      propertyPath: shootCooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
