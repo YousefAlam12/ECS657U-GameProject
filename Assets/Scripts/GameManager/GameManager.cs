@@ -60,9 +60,9 @@ public class GameManager : MonoBehaviour
 
     void Update() 
     {
-        // ///////////////
+        // /////////////////
         Debug.Log(PlayerInventory.SecretTreasure);
-        // ///////////////
+        // /////////////////
 
         if (healthManager.currentHealth <= 0) {
             GameOver();
@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour
         if (isHard)
         {
             currentLvl = 1;
+            secretTreasure = 0;
             SaveSystem.SaveGame(this);
         }
     }

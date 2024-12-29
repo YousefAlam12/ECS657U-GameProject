@@ -80,16 +80,5 @@ public class MainMenuManager : MonoBehaviour
         PlayerInventory.SecretTreasure = data.secretTreasure;
         SceneManager.LoadScene(lvl);
     }
-
-    void Update()
-    {
-        ////////////////////////////////////////////
-        // ONLY FOR PLAYTEST
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            SceneManager.LoadScene("Yousef");
-        }
-        ////////////////////////////////////////////
-    }
 }
 
