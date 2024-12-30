@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OxygenPickup : MonoBehaviour
 {
-    public float oxygenAmount = 10f; 
+    public float oxygenAmount = 11f; 
     private OxygenBar oxygenBar; 
     public float respawnTime = 5f;
     private MeshRenderer meshRenderer;

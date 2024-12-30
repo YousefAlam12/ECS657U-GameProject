@@ -4642,7 +4642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickups:
   - {fileID: 8332494345175048438, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
-  amount: 25
+  amount: 40
   spawnArea: {x: 89, y: 25, z: 35}
   spawnableLayer:
     serializedVersion: 2
@@ -18323,7 +18323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickups:
   - {fileID: 8332494345175048438, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
-  amount: 15
+  amount: 20
   spawnArea: {x: 15, y: 27, z: 40}
   spawnableLayer:
     serializedVersion: 2

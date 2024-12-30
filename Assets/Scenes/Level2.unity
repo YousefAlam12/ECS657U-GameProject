@@ -1373,8 +1373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickups:
   - {fileID: 8332494345175048438, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
-  amount: 15
-  spawnArea: {x: 30, y: 30, z: 100}
+  amount: 30
+  spawnArea: {x: 30, y: 10, z: 100}
   spawnableLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -1391,7 +1391,7 @@ Transform:
   m_GameObject: {fileID: 127486764}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.971634, y: 24.430809, z: -170.59927}
+  m_LocalPosition: {x: 43.971634, y: 49, z: -170.59927}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3139,7 +3139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickups:
   - {fileID: 8332494345175048438, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
-  amount: 15
+  amount: 30
   spawnArea: {x: 150, y: 5, z: 40}
   spawnableLayer:
     serializedVersion: 2

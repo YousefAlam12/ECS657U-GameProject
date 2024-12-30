@@ -11207,6 +11207,61 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc9401f51ca40f541b862b7b4d045a5c, type: 3}
+--- !u!1 &1090327492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090327493}
+  - component: {fileID: 1090327494}
+  m_Layer: 0
+  m_Name: Oxygen Spawner 1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1090327493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090327492}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -33.5, y: 45.3, z: -342.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2082714442}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1090327494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090327492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd11afd5ad343eb4499d61d5cdb31c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickups:
+  - {fileID: 8332494345175048438, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
+  amount: 30
+  spawnArea: {x: 30, y: 50, z: 90}
+  spawnableLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  spreadFactor: 1
+  allowSpawnInColliders: 0
+  maxRetries: 100000
+  spawnHeightOffset: 0.1
 --- !u!1 &1090618130
 GameObject:
   m_ObjectHideFlags: 0
@@ -13667,7 +13722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickups:
   - {fileID: 8332494345175048438, guid: c0082b20e41ede94798a20db12c1011e, type: 3}
-  amount: 50
+  amount: 20
   spawnArea: {x: 30, y: 30, z: 40}
   spawnableLayer:
     serializedVersion: 2
@@ -21054,6 +21109,7 @@ Transform:
   - {fileID: 1698694673}
   - {fileID: 1825192367}
   - {fileID: 1305758261}
+  - {fileID: 1090327493}
   - {fileID: 1372746422}
   - {fileID: 1258584053}
   - {fileID: 380436613}

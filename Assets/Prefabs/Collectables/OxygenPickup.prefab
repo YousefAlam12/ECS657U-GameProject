@@ -118,5 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4cee67a707a41345b7e75a71bfedf1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oxygenAmount: 25
-  respawnTime: 100
+  oxygenAmount: 30
+  respawnTime: 90
