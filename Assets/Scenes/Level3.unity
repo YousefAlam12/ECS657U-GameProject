@@ -1390,11 +1390,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96283961}
   m_CullTransparentMesh: 1
---- !u!4 &100063012 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-  m_PrefabInstance: {fileID: 578226538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &102036551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2611,6 +2606,10 @@ PrefabInstance:
     - target: {fileID: 2642942118664435996, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
       propertyPath: m_Speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642942118664435996, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
+      propertyPath: m_AutoRepath
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2642942118664435996, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
       propertyPath: m_AutoTraverseOffMeshLink
@@ -3879,6 +3878,7 @@ Transform:
   - {fileID: 1271859173}
   - {fileID: 2018895756}
   - {fileID: 1170205949}
+  - {fileID: 754266641}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &359547940
@@ -4171,7 +4171,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: e9fc978c26f9848408ce369c422d04e0, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 2faf95da8ba295a438e854c98d5c06bd, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &379238987
 Transform:
@@ -4378,7 +4378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.365059
+      value: -9.89
       objectReference: {fileID: 0}
     - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4446,9 +4446,9 @@ MonoBehaviour:
   dialogueCanvasPrefab: {fileID: 7518678878319719287, guid: 4a93518e53e88a240adf33e1b52674c2, type: 3}
   dialogueLines:
   - Mutant kid... you're still alive? We met at the start of the second area, but
-    what does that matter, haha, I... I don't see how we're leaving this place with
-    the submarine destroyed and half of the Sprinters are dead... There's not many
-    of us left.
+    what does that matter, haha....
+  - I don't see how we're leaving this place with the submarine destroyed and half
+    of the Sprinters are dead... There's not many of us left
   - So many lives lost... for some stupid treasure.
   - If you take the treasure now, you might be able to escape and cure yourself of
     the mutations... but all of us are still going to be trapped down here.
@@ -4456,8 +4456,8 @@ MonoBehaviour:
   - You just might be able to save us all.
   - Know this though. The one who destroyed the Scuba Sprinter Submarine, wasn't
     the Mutant Shark that ruled this complex... No... He is much, much worse.
-  - I don't think he would be happy if you were take those secret treasures... but
-    you're our only hope.
+  - I don't think he would be happy if you took those secret treasures... but it's
+    the only thing you can do to get us ALL out.
   - The choice is yours though, kiddo.
 --- !u!65 &409887317
 BoxCollider:
@@ -6332,87 +6332,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5773362665451187657, guid: ffa0f16c0c37e9b4bb0a63747d894157, type: 3}
   m_PrefabInstance: {fileID: 189854250}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &578226538
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 851935688}
-    m_Modifications:
-    - target: {fileID: 1951379549748636597, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1894660876}
-    - target: {fileID: 1951379549748636597, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: aggroRange
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2642942118664435996, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_Speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7190048688471846947, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_Name
-      value: SharkEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -81.270004
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -11.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 38.242943
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
 --- !u!1001 &590744559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6856,7 +6775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_LocalScale.z
@@ -6864,7 +6783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -99.770004
+      value: -111.59
       objectReference: {fileID: 0}
     - target: {fileID: 2207849999626243613, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6904,7 +6823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545793443826982882, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_Speed
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5545793443826982882, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_AutoRepath
@@ -6916,7 +6835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545793443826982882, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_Acceleration
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5545793443826982882, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_AngularSpeed
@@ -6924,11 +6843,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545793443826982882, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_WalkableMask
-      value: 2
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5545793443826982882, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_StoppingDistance
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545793443826982882, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5545793443826982882, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: m_AutoTraverseOffMeshLink
@@ -6944,7 +6867,7 @@ PrefabInstance:
       objectReference: {fileID: 1894660876}
     - target: {fileID: 8309054756772154699, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: aggroRange
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 8309054756772154699, guid: fb8b6b50c33d85b448a7af23712d0582, type: 3}
       propertyPath: hoverHeight
@@ -8366,12 +8289,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754266638}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -372, y: -103, z: -596}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -255.43002, y: -73.79, z: -617.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 356029863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &754835602
 PrefabInstance:
@@ -9687,7 +9610,6 @@ Transform:
   - {fileID: 1045447988}
   - {fileID: 730272106}
   - {fileID: 804144987}
-  - {fileID: 100063012}
   - {fileID: 1058638961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11312,7 +11234,7 @@ MonoBehaviour:
   pointA: {fileID: 1534047520}
   pointB: {fileID: 1451297288}
   speed: 6
-  delay: 0.5
+  delay: 1
   platform: {fileID: 473228501}
   startDelay: 0.5
   startFromPointA: 1
@@ -15806,9 +15728,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The treasures were all unlocked a beam of light shot out curing you of
-    the mutations and blasting you back into the surface. But... the Scuba Sprinters...
-    they were still down there... '
+  m_text: The treasures gathered boosted the power granted by the mutation, allowing
+    you to propel yourself out of the ocean. With all the treasured gathered, Scuba
+    Sprinter HQ will help cure your mutation, however, the remaining surviving Scuba
+    Sprinters are stilll down there... with no one to rescue them, leaving them to
+    the mercy of the sea.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16957,6 +16881,10 @@ PrefabInstance:
     - target: {fileID: 1951379549748636597, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
       propertyPath: aggroRange
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642942118664435996, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
+      propertyPath: m_AutoRepath
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2642942118664435996, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
       propertyPath: m_AgentTypeID
@@ -19665,8 +19593,8 @@ Transform:
   m_GameObject: {fileID: 1757153523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -9.419998, y: 41.3761, z: 0}
-  m_LocalScale: {x: 10.701826, y: 30.943928, z: 3.8026352}
+  m_LocalPosition: {x: -9.419998, y: 38.9833, z: 0}
+  m_LocalScale: {x: 10.701826, y: 35.72987, z: 3.8026352}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 356029863}
@@ -20900,7 +20828,7 @@ MonoBehaviour:
   pointA: {fileID: 1459247678}
   pointB: {fileID: 1945372024}
   speed: 5
-  delay: 0.5
+  delay: 1.5
   platform: {fileID: 852185670}
   startDelay: 0.5
   startFromPointA: 0
@@ -22934,7 +22862,7 @@ Transform:
   m_GameObject: {fileID: 2022248074}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -19.200005, y: -27.8, z: 0}
+  m_LocalPosition: {x: -19.200005, y: -29.2, z: 0}
   m_LocalScale: {x: 10.701826, y: 80.442, z: 4.354046}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24203,5 +24131,4 @@ SceneRoots:
   - {fileID: 2070523545}
   - {fileID: 851935688}
   - {fileID: 1739895790}
-  - {fileID: 754266641}
   - {fileID: 559342356}

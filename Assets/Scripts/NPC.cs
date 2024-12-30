@@ -72,10 +72,10 @@ public class NPC : MonoBehaviour
         foreach (char letter in line.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.7f);
         ShowNextLine();
     }
 

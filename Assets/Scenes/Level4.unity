@@ -659,84 +659,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffa0f16c0c37e9b4bb0a63747d894157, type: 3}
---- !u!1001 &143435345
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 853056643}
-    m_Modifications:
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.449999
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -577.58997
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.35339066
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.9354758
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 221.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9095662814383746779, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      propertyPath: m_Name
-      value: Astrounalt_Blue Variant (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9095662814383746779, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 553268279}
-    - targetCorrespondingSourceObject: {fileID: 9095662814383746779, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 553268278}
-    - targetCorrespondingSourceObject: {fileID: 9095662814383746779, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 553268277}
-  m_SourcePrefab: {fileID: 100100000, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
 --- !u!1001 &144904155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1324,6 +1246,7 @@ MonoBehaviour:
   spreadFactor: 0.5
   allowSpawnInColliders: 0
   maxRetries: 5
+  collectables: {fileID: 0}
   spawnHeightOffset: 0
 --- !u!4 &243655992
 Transform:
@@ -2052,11 +1975,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvasPrefab: {fileID: 7518678878319719287, guid: 4a93518e53e88a240adf33e1b52674c2, type: 3}
   dialogueLines:
-  - You have finally managed to get all the secret treasures, this is it the sunken
-    castle deep...
-  - 'There lies a big Monster ahead '
-  - Please defeat him and claim the final piece of the treasure
-  - Please don't let him get away with all that he's done
+  - I'm another one of the survivors, once you got the last secret jewel, I found
+    myself here...
+  - There's one more treasure up ahead, but more importantly the King of the Sea
+    is there too, but he's mutated, just like you and commands immense power.
+  - There's not much time, the castle might collapse at any time.Please... don't
+    let him get away with all that he's done!
 --- !u!65 &380027434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3001,76 +2925,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552952498}
   m_CullTransparentMesh: 1
---- !u!1 &553268276 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9095662814383746779, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-  m_PrefabInstance: {fileID: 143435345}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &553268277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553268276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 251eefa11127a864280a8a61da8fe9af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueCanvasPrefab: {fileID: 7518678878319719287, guid: 4a93518e53e88a240adf33e1b52674c2, type: 3}
-  dialogueLines:
-  - You made it!!!
-  - There seems to be some thick swamp water in this area
-  - QUICKLY THERES NOT MUCH TIME!!!!
-  - SPRINT THROUGH TO GET PAST AND DEFEAT THAT MOSNTER!!
---- !u!65 &553268278
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553268276}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.4988098, y: 2, z: 2.730895}
-  m_Center: {x: 0.01991272, y: 0.7717471, z: 0.0057673454}
---- !u!65 &553268279
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553268276}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.1326599, y: 2.0419054, z: 1}
-  m_Center: {x: -0.022201538, y: 0.5209527, z: 0}
---- !u!4 &553268281 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8462714014577914977, guid: a04e2b9338ca5bd49a2de6b18dc50a77, type: 3}
-  m_PrefabInstance: {fileID: 143435345}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &563830847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,6 +3010,158 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8572843762739816675, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
   m_PrefabInstance: {fileID: 179879984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &572465885
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 853056643}
+    m_Modifications:
+    - target: {fileID: 7229224051861892665, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_Name
+      value: Astrounalt_Orange Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -577.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.36658925
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9303829
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 223.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7229224051861892665, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 572465890}
+    - targetCorrespondingSourceObject: {fileID: 7229224051861892665, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 572465889}
+    - targetCorrespondingSourceObject: {fileID: 7229224051861892665, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 572465888}
+  m_SourcePrefab: {fileID: 100100000, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+--- !u!4 &572465886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+  m_PrefabInstance: {fileID: 572465885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &572465887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7229224051861892665, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
+  m_PrefabInstance: {fileID: 572465885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &572465888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572465887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251eefa11127a864280a8a61da8fe9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueCanvasPrefab: {fileID: 7518678878319719287, guid: 4a93518e53e88a240adf33e1b52674c2, type: 3}
+  dialogueLines:
+  - Nice going, mutant kid! Those secret treasures you found... it just might be
+    able to get us out of here.
+  - They're more than just green shiny jewels - they can get us all out of here.
+  - But... beyond that swamp there...
+  - I told you before... about the one who really destroyed the submarine and killed
+    our comrades... he's waiting up ahead.
+  - There's not much time, and I hate to give you more work but you're the only one
+    capable of taking down such a behemoth. Please... save the Scuba Sprinters!
+--- !u!65 &572465889
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572465887}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4988098, y: 2, z: 2.730895}
+  m_Center: {x: 0.01991272, y: 0.7717471, z: 0.0057673454}
+--- !u!65 &572465890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572465887}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1326599, y: 2.0419054, z: 1}
+  m_Center: {x: -0.022201538, y: 0.5209527, z: 0}
 --- !u!1001 &579893295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4286,7 +4292,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 380027437}
-  - {fileID: 553268281}
+  - {fileID: 572465886}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &868098024
@@ -4701,11 +4707,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickups:
-  - {fileID: 1510757144054267494, guid: 9daffdd6da6686c4b8f8a87ba60628d8, type: 3}
   - {fileID: 2563593829099635406, guid: 485c932269792ac408ec13de1908fca3, type: 3}
-  - {fileID: 2766764225363600623, guid: 742ada4940b6d584ead3521e83ba7945, type: 3}
-  - {fileID: 3663473040921885571, guid: 8d38972ce8dda9b4d9e04b6c249c0436, type: 3}
-  amount: 10
+  amount: 4
   spawnArea: {x: 68, y: 1, z: 15}
   spawnableLayer:
     serializedVersion: 2
@@ -4713,6 +4716,7 @@ MonoBehaviour:
   spreadFactor: 0.5
   allowSpawnInColliders: 0
   maxRetries: 5
+  collectables: {fileID: 0}
   spawnHeightOffset: 0
 --- !u!1 &1013234854
 GameObject:
@@ -5512,11 +5516,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickups:
-  - {fileID: 1510757144054267494, guid: 9daffdd6da6686c4b8f8a87ba60628d8, type: 3}
   - {fileID: 2563593829099635406, guid: 485c932269792ac408ec13de1908fca3, type: 3}
-  - {fileID: 2766764225363600623, guid: 742ada4940b6d584ead3521e83ba7945, type: 3}
-  - {fileID: 3663473040921885571, guid: 8d38972ce8dda9b4d9e04b6c249c0436, type: 3}
-  amount: 10
+  amount: 4
   spawnArea: {x: 68, y: 1, z: 15}
   spawnableLayer:
     serializedVersion: 2
@@ -5524,6 +5525,7 @@ MonoBehaviour:
   spreadFactor: 0.5
   allowSpawnInColliders: 0
   maxRetries: 5
+  collectables: {fileID: 0}
   spawnHeightOffset: 0
 --- !u!1001 &1332582791
 PrefabInstance:
@@ -5808,9 +5810,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: All the treasures were combined resulting in a massive geyser, with this
-    all the Scuba Sprinters were saved and the mutation was reverted, but the treasure
-    within the mutant whale has granted you the powers of the sea?!?! The Scuba Sprinters
-    missions have just gotten whole lot more interesting.
+    all the remaining Scuba Sprinters were saved and Scuba Sprinters HQ have agreed
+    to help cure you of your mutation, but defeating the mutated King of the Sea
+    has awoken your powers further... Would it be a waste to get rid of them now?
+    Either way, the Scuba Sprinters missions have just gotten a whole lot more interesting.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6116,6 +6119,7 @@ MonoBehaviour:
   spreadFactor: 0.5
   allowSpawnInColliders: 0
   maxRetries: 5
+  collectables: {fileID: 0}
   spawnHeightOffset: 0
 --- !u!4 &1507315372
 Transform:
@@ -7327,6 +7331,7 @@ MonoBehaviour:
   spreadFactor: 0.5
   allowSpawnInColliders: 0
   maxRetries: 5
+  collectables: {fileID: 0}
   spawnHeightOffset: 0
 --- !u!4 &1799068839
 Transform:

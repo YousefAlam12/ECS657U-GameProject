@@ -16,9 +16,13 @@ public class RandomSpawner : MonoBehaviour
     private int totalSpawned = 0;  // Total number of objects successfully spawned
     private int totalRetries = 0;  // Total number of retries across all spawns
 
+    public GameObject collectables; // Var for the COLLECTABLES folder/gameobject in scene hierarchy
+
     // Procedurally generate content in the form of pickup items across selected range
     void Start()
     {
+        collectables = GameObject.Find("COLLECTABLES");
+
         for (int i = 0; i < amount; i++)
         {
             bool objectSpawned = false;
@@ -51,7 +55,8 @@ public class RandomSpawner : MonoBehaviour
                     if (pickups.Count > 0)
                     {
                         GameObject randomPickup = pickups[Random.Range(0, pickups.Count)];
-                        Instantiate(randomPickup, randomPosition, Quaternion.identity);
+                        GameObject spawnedObject = Instantiate(randomPickup, randomPosition, Quaternion.identity);
+                        spawnedObject.transform.SetParent(collectables.transform); // sets new obj as child of the COLLECTABLES folder/gameobject
                         objectSpawned = true; // Mark the object as successfully spawned
                         totalSpawned++;  // Increment the total spawned counter
                     }
