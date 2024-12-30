@@ -74,12 +74,19 @@ public class MainMenuManager : MonoBehaviour
     {
         GameData data = SaveSystem.LoadGame();
         
-        easyMode = data.isEasy;
-        hardMode = data.isHard;
-        OptionsManager.playerSens = data.sensitivity;
-        string lvl = "Level" + data.level;
-        PlayerInventory.SecretTreasure = data.secretTreasure;
-        SceneManager.LoadScene(lvl);
+        if (data != null)
+        {
+            easyMode = data.isEasy;
+            hardMode = data.isHard;
+            OptionsManager.playerSens = data.sensitivity;
+            string lvl = "Level" + data.level;
+            PlayerInventory.SecretTreasure = data.secretTreasure;
+            SceneManager.LoadScene(lvl);
+        }
+        else
+        {
+            return;
+        }
     }
 }
 
