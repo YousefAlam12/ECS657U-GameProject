@@ -175,8 +175,11 @@ public class GameManager : MonoBehaviour
             // Move player back to original spawn point
             player.transform.position = respawnPoint;
             player.GetComponent<CheckPoint>().gameRespawn.UpdateRespawnPoint(respawnPoint);
+            
+            // reset back to max o2
+            player.GetComponent<PlayerController>().o2Bar.oxygen = player.GetComponent<PlayerController>().o2Bar.maxOxygen;
 
-            // Restore health on respaw when easy
+            // Restore health on respawn when easy
             if (MainMenuManager.isEasy())
             {
                 healthManager.healthBar.setHealth(healthManager.maxHealth);
