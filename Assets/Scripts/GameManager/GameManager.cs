@@ -72,10 +72,7 @@ public class GameManager : MonoBehaviour
             hasRespawned = true;
             
         }
-        if (PlayerInventory.SecretTreasure > 3)
-        {
-            PlayerInventory.SecretTreasure = 3;
-        }
+
 
         // Transisitons to lvl2 once the treasure is obtained from lvl1
         if (playerInventory.NumberOfTreasure == playerInventory.totalTreasure && currentLvl == 1) {
@@ -97,7 +94,6 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                // SceneManager.LoadScene("MainMenuScreen");
                 // show win screen and reset secret treasure count
                 GameWin();
             }
@@ -107,7 +103,6 @@ public class GameManager : MonoBehaviour
         if (playerInventory.NumberOfTreasure == playerInventory.totalTreasure && currentLvl == 4)
         {
             GameWin();
-            // SceneManager.LoadScene("MainMenuScreen");
         }
     }
 
@@ -222,7 +217,9 @@ public class GameManager : MonoBehaviour
     // win screen
     void GameWin() 
     {
+        // reset secret treasure count upon winning
         PlayerInventory.SecretTreasure = 0;
+        
         // Display Game Over panel
         gameOverPanel.SetActive(true);
         restartButton.gameObject.SetActive(false);
