@@ -7018,11 +7018,13 @@ MonoBehaviour:
   dialogueCanvasPrefab: {fileID: 7518678878319719287, guid: 4a93518e53e88a240adf33e1b52674c2, type: 3}
   dialogueLines:
   - "Wait\u2026 you\u2019re alive? Down here? How\u2019s that possible? The water
-    must\u2019ve\u2026 mutated you... just like those fish.."
-  - "You can\u2019t stay like this\u2014those depths, those things out there, they\u2019re
-    dangerous. The fish\u2014they\u2019re not just fish anymore."
-  - "The treasure, it\u2019s the cure. You need all the pieces to go back to normal.
-    But hurry\u2014your time\u2019s running out!"
+    must\u2019ve\u2026 mutated you... just like those fish... They have become extremely
+    agressive!"
+  - "The treasure... if you collect  it HQ will help cure your condition. You're
+    gonna need to collect all the pieces. But hurry\u2014your time\u2019s running
+    out. Who knows what could happen if you stay like this?"
+  - Anyways, use the WASD keys to move around and spacebar to jump. That should get
+    you started for now.
 --- !u!65 &656010864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11261,6 +11263,7 @@ MonoBehaviour:
   spreadFactor: 1
   allowSpawnInColliders: 0
   maxRetries: 100000
+  collectables: {fileID: 0}
   spawnHeightOffset: 0.1
 --- !u!1 &1090618130
 GameObject:
@@ -13730,6 +13733,7 @@ MonoBehaviour:
   spreadFactor: 1
   allowSpawnInColliders: 0
   maxRetries: 100000
+  collectables: {fileID: 0}
   spawnHeightOffset: 0.1
 --- !u!4 &1312077025 stripped
 Transform:
@@ -17650,6 +17654,7 @@ MonoBehaviour:
   spreadFactor: 1
   allowSpawnInColliders: 0
   maxRetries: 100000
+  collectables: {fileID: 0}
   spawnHeightOffset: 0.1
 --- !u!4 &1698694673
 Transform:
@@ -19323,6 +19328,7 @@ MonoBehaviour:
   spreadFactor: 1
   allowSpawnInColliders: 0
   maxRetries: 100000
+  collectables: {fileID: 0}
   spawnHeightOffset: 0.1
 --- !u!1001 &1827061449
 PrefabInstance:

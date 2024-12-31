@@ -3283,7 +3283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 113.46628}
+  m_AnchoredPosition: {x: 0, y: 131}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329449967
@@ -3333,8 +3333,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3879,6 +3879,7 @@ Transform:
   - {fileID: 2018895756}
   - {fileID: 1170205949}
   - {fileID: 754266641}
+  - {fileID: 1918873290}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &359547940
@@ -4378,7 +4379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.89
+      value: -10.36
       objectReference: {fileID: 0}
     - target: {fileID: 8005302636603536515, guid: 51e60016941d75c4281a1e3e43c73d8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4448,7 +4449,7 @@ MonoBehaviour:
   - Mutant kid... you're still alive? We met at the start of the second area, but
     what does that matter, haha....
   - I don't see how we're leaving this place with the submarine destroyed and half
-    of the Sprinters are dead... There's not many of us left
+    of the Sprinters are dead... There's not many of us left.
   - So many lives lost... for some stupid treasure.
   - If you take the treasure now, you might be able to escape and cure yourself of
     the mutations... but all of us are still going to be trapped down here.
@@ -4650,6 +4651,7 @@ MonoBehaviour:
   spreadFactor: 1
   allowSpawnInColliders: 1
   maxRetries: 100000
+  collectables: {fileID: 0}
   spawnHeightOffset: 0.1
 --- !u!4 &431296217
 Transform:
@@ -6053,7 +6055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: 0, y: -101}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541871164
@@ -13763,6 +13765,7 @@ MonoBehaviour:
   spreadFactor: 1
   allowSpawnInColliders: 0
   maxRetries: 999999
+  collectables: {fileID: 0}
   spawnHeightOffset: 1
 --- !u!1001 &1280964114
 PrefabInstance:
@@ -15731,8 +15734,7 @@ MonoBehaviour:
   m_text: The treasures gathered boosted the power granted by the mutation, allowing
     you to propel yourself out of the ocean. With all the treasured gathered, Scuba
     Sprinter HQ will help cure your mutation, however, the remaining surviving Scuba
-    Sprinters are stilll down there... with no one to rescue them, leaving them to
-    the mercy of the sea.
+    Sprinters are stilll down there... with no one to rescue them.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18259,6 +18261,7 @@ MonoBehaviour:
   spreadFactor: 1
   allowSpawnInColliders: 0
   maxRetries: 100000
+  collectables: {fileID: 0}
   spawnHeightOffset: 0.1
 --- !u!4 &1658949407
 Transform:
@@ -21344,7 +21347,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2101640670}
+    m_TransformParent: {fileID: 356029863}
     m_Modifications:
     - target: {fileID: 4812482033968383763, guid: 3ecd948dfbdeed24c82d1507089dacb9, type: 3}
       propertyPath: m_Name
@@ -21352,15 +21355,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5296952539014684073, guid: 3ecd948dfbdeed24c82d1507089dacb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -58.3
+      value: 58.269985
       objectReference: {fileID: 0}
     - target: {fileID: 5296952539014684073, guid: 3ecd948dfbdeed24c82d1507089dacb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.2
+      value: -24.009996
       objectReference: {fileID: 0}
     - target: {fileID: 5296952539014684073, guid: 3ecd948dfbdeed24c82d1507089dacb9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41.3
+      value: -44.159996
       objectReference: {fileID: 0}
     - target: {fileID: 5296952539014684073, guid: 3ecd948dfbdeed24c82d1507089dacb9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23883,7 +23886,6 @@ Transform:
   - {fileID: 1827657962}
   - {fileID: 921487075}
   - {fileID: 1949911942}
-  - {fileID: 1918873290}
   - {fileID: 1819405397}
   - {fileID: 1168862896}
   m_Father: {fileID: 0}

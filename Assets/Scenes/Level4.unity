@@ -997,7 +997,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000027139, y: 122}
+  m_AnchoredPosition: {x: -0.000027139, y: 148}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &183908952
@@ -1047,8 +1047,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1975,7 +1975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvasPrefab: {fileID: 7518678878319719287, guid: 4a93518e53e88a240adf33e1b52674c2, type: 3}
   dialogueLines:
-  - I'm another one of the survivors, once you got the last secret jewel, I found
+  - I'm another one of the survivors, once you got the last secret treasure, I found
     myself here...
   - There's one more treasure up ahead, but more importantly the King of the Sea
     is there too, but he's mutated, just like you and commands immense power.
@@ -4708,7 +4708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickups:
   - {fileID: 2563593829099635406, guid: 485c932269792ac408ec13de1908fca3, type: 3}
-  amount: 4
+  amount: 10
   spawnArea: {x: 68, y: 1, z: 15}
   spawnableLayer:
     serializedVersion: 2
@@ -5033,6 +5033,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4734099269873008929, guid: 972bc78f7822b3f4b8c2d2536cb64fdb, type: 3}
   m_PrefabInstance: {fileID: 980759679}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1159803991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1159803992}
+  - component: {fileID: 1159803993}
+  m_Layer: 0
+  m_Name: Spawner oxygen (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1159803992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159803991}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.300003, y: -4.24, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1576356206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1159803993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159803991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd11afd5ad343eb4499d61d5cdb31c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickups:
+  - {fileID: 4433439579818953482, guid: dc9401f51ca40f541b862b7b4d045a5c, type: 3}
+  amount: 3
+  spawnArea: {x: 65, y: 0.5, z: 65}
+  spawnableLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  spreadFactor: 0.5
+  allowSpawnInColliders: 0
+  maxRetries: 5
+  collectables: {fileID: 0}
+  spawnHeightOffset: 0
 --- !u!1001 &1177702912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5159,6 +5215,99 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35be9def8712c44b9a1a0f8e59c0c79, type: 3}
+--- !u!1 &1197826609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1197826612}
+  - component: {fileID: 1197826611}
+  - component: {fileID: 1197826610}
+  m_Layer: 0
+  m_Name: Terrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!154 &1197826610
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197826609}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 15600000, guid: ce636683e5967d34889fa6ac0863e6f2, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &1197826611
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197826609}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: ce636683e5967d34889fa6ac0863e6f2, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
+  m_IgnoreQualitySettings: 0
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ReceiveGI: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+  m_EnableHeightmapRayTracing: 1
+  m_EnableTreesAndDetailsRayTracing: 0
+  m_TreeMotionVectorModeOverride: 3
+--- !u!4 &1197826612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197826609}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.16973466, z: -0, w: 0.98548985}
+  m_LocalPosition: {x: -367, y: -357, z: -574}
+  m_LocalScale: {x: 1, y: 2.6875, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -19.545, z: 0}
 --- !u!1001 &1200756694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5517,7 +5666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickups:
   - {fileID: 2563593829099635406, guid: 485c932269792ac408ec13de1908fca3, type: 3}
-  amount: 4
+  amount: 10
   spawnArea: {x: 68, y: 1, z: 15}
   spawnableLayer:
     serializedVersion: 2
@@ -5710,6 +5859,62 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad4542e80b8f79149bc90da133cb5f31, type: 3}
+--- !u!1 &1346440805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346440806}
+  - component: {fileID: 1346440807}
+  m_Layer: 0
+  m_Name: BoxSpawner2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1346440806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346440805}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.300003, y: -4.24, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1576356206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1346440807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346440805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd11afd5ad343eb4499d61d5cdb31c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickups:
+  - {fileID: 2766764225363600623, guid: 742ada4940b6d584ead3521e83ba7945, type: 3}
+  amount: 5
+  spawnArea: {x: 68, y: 1, z: 50}
+  spawnableLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  spreadFactor: 0.5
+  allowSpawnInColliders: 0
+  maxRetries: 5
+  collectables: {fileID: 0}
+  spawnHeightOffset: 0
 --- !u!1 &1387355199
 GameObject:
   m_ObjectHideFlags: 0
@@ -6498,7 +6703,9 @@ Transform:
   - {fileID: 1507315372}
   - {fileID: 1322099089}
   - {fileID: 1010645407}
+  - {fileID: 1346440806}
   - {fileID: 243655992}
+  - {fileID: 1159803992}
   - {fileID: 1799068839}
   - {fileID: 1459273851}
   - {fileID: 849039734}
@@ -6978,7 +7185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: -61.472008}
+  m_AnchoredPosition: {x: -0.000030517578, y: -86.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704218832
@@ -8509,3 +8716,4 @@ SceneRoots:
   - {fileID: 853056643}
   - {fileID: 1387355200}
   - {fileID: 1932828679}
+  - {fileID: 1197826612}
