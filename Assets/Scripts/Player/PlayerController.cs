@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         if (MainMenuManager.isEasy())
         {
             Debug.Log("easy mode");
-            jumpForce = 10f;
+            jumpForce = 9f;
         }
     }
 
