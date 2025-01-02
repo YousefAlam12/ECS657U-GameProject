@@ -12380,7 +12380,7 @@ MonoBehaviour:
   pointA: {fileID: 588204584}
   pointB: {fileID: 1472115123}
   speed: 10
-  delay: 1
+  delay: 0
   platform: {fileID: 1678146340}
   startDelay: 0
   startFromPointA: 1
