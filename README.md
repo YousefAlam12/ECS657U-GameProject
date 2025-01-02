@@ -1,11 +1,11 @@
 # ECS657U-GameProject
 
-- Aim of the game is to complete the level and obtian all the super treasures within the level to progress to the next one
-- There are is also a secret treasure within each level, collect all to play the secret level
+- Aim of the game is to complete the level and obtain all the super treasures within the level to progress to the next one
+- There is also a secret treasure within each level, collect all to play the secret level
 - Controls of the game include (inside game menu):
     - (WASD) for movement
     - Lshift for sprinting
-    - Space for jumpiing (kill enemues by jumping on head)
+    - Space for jumping (kill enemies by jumping on head)
     - Mouse for camera movement
     - E to grab objects
     - E to drop grabbed object
