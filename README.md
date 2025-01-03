@@ -5,7 +5,7 @@
 - Controls of the game include (inside game menu):
     - (WASD) for movement
     - Lshift for sprinting
-    - Space for jumping (kill enemies by jumping on head)
+    - Space for jumping (kill enemies by jumping on head + walljump by also pressing opposite to intended direction with WASD)
     - Mouse for camera movement
     - E to grab objects
     - E to drop grabbed object
