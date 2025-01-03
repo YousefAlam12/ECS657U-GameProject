@@ -7,6 +7,8 @@ public class Dash : MonoBehaviour
 {
     private PlayerInventory inventory;
     public Sprite powerIcon;
+    public float respawnTime = 10f;
+    public bool canRespawn = true;
 
     void Start()
     {
@@ -30,7 +32,19 @@ public class Dash : MonoBehaviour
             // setting the icon to the current powerup
             inventory.icon.sprite = powerIcon;
             inventory.icon.gameObject.SetActive(true);
+
+            // If the power-up can respawn, invoke respawn logic
+            if (canRespawn)
+            {
+                Invoke("RespawnPowerUp", respawnTime);
+            }
         }
+    }
+
+     // This method is called after the respawnTime to reactivate the power-up
+    void RespawnPowerUp()
+    {
+        gameObject.SetActive(true);
     }
 
 }
